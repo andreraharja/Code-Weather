@@ -1,8 +1,10 @@
+import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../bloc/weather_bloc.dart';
+import '../../../application/weather/weather_bloc.dart';
 
+@RoutePage()
 class WeatherPage extends StatelessWidget {
   const WeatherPage({Key? key}) : super(key: key);
 
@@ -182,8 +184,8 @@ class WeatherPage extends StatelessWidget {
                           return Container(
                             margin: const EdgeInsets.only(
                                 top: 10.0, right: 10.0, left: 10.0),
-                            child: Column(
-                              children: const [
+                            child: const Column(
+                              children: [
                                 Text("22:00"),
                                 SizedBox(
                                   height: 5,
@@ -206,14 +208,14 @@ class WeatherPage extends StatelessWidget {
                     shrinkWrap: true,
                     itemCount: 15,
                     itemBuilder: (context, index) {
-                      return Padding(
-                        padding: const EdgeInsets.all(8.0),
+                      return const Padding(
+                        padding: EdgeInsets.all(8.0),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            const Text('Sun May 14'),
+                            Text('Sun May 14'),
                             Row(
-                              children: const [
+                              children: [
                                 Text("31 / 27 \u2103"),
                                 SizedBox(width: 5),
                                 Icon(

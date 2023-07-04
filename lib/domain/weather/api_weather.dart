@@ -1,6 +1,7 @@
-import 'package:clone_weather/model/m_weather.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
+
+import 'm_weather.dart';
 
 class ApiWeather {
   final Dio _dio = Dio();

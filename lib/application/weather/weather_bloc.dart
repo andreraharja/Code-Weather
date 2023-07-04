@@ -1,8 +1,9 @@
 import 'package:bloc/bloc.dart';
-import 'package:clone_weather/api/api_weather.dart';
-import 'package:clone_weather/model/m_weather.dart';
+import 'package:clone_weather/domain/weather/api_weather.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:geocoding/geocoding.dart';
+
+import '../../domain/weather/m_weather.dart';
 
 part 'weather_event.dart';
 part 'weather_state.dart';

@@ -1,25 +1,25 @@
-import 'package:clone_weather/bloc/weather_bloc.dart';
-import 'package:clone_weather/location_access.dart';
-import 'package:clone_weather/view/error_page.dart';
-import 'package:clone_weather/view/weather_page.dart';
+import 'package:clone_weather/presentation/routes/router.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:geolocator/geolocator.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  Position position =
-      await determinePosition().then((value) => value).catchError((e) {
-    runApp(MyApp(
-      message: e,
-    ));
-  });
-  runApp(MyApp(
-    message: 'OK',
-    position: position,
-  ));
+  runApp(MyApp());
 }
 
+class MyApp extends StatelessWidget {
+  MyApp({Key? key}) : super(key: key);
+  final _appRouter = AppRouter();
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
+      routerConfig: _appRouter.config(),
+    );
+  }
+}
+
+/*
 class MyApp extends StatelessWidget {
   const MyApp({Key? key, this.message, this.position}) : super(key: key);
   final String? message;
@@ -43,3 +43,4 @@ class MyApp extends StatelessWidget {
     }
   }
 }
+*/
