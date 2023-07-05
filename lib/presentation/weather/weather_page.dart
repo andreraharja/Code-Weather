@@ -86,7 +86,8 @@ class WeatherPage extends StatelessWidget {
                   Align(
                     alignment: Alignment.center,
                     child: Text(
-                      state.mWeather.main!.temp!.toStringAsFixed(0) + "\u2103",
+                      state.mWeather.main!.temp!.toStringAsFixed(0) +
+                          "\u2103",
                       style: Theme.of(context)
                           .textTheme
                           .headlineLarge!
