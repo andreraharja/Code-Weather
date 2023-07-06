@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'login_model.dart';
+part of 'profile_model.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,65 +14,69 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-LoginModel _$LoginModelFromJson(Map<String, dynamic> json) {
-  return MLogin.fromJson(json);
+ProfileModel _$ProfileModelFromJson(Map<String, dynamic> json) {
+  return MProfile.fromJson(json);
 }
 
 /// @nodoc
-mixin _$LoginModel {
+mixin _$ProfileModel {
   String? get username => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
   String? get password => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String? username, String? password) mLogin,
+    required TResult Function(String? username, String? name, String? password)
+        mProfile,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String? username, String? password)? mLogin,
+    TResult? Function(String? username, String? name, String? password)?
+        mProfile,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String? username, String? password)? mLogin,
+    TResult Function(String? username, String? name, String? password)?
+        mProfile,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(MLogin value) mLogin,
+    required TResult Function(MProfile value) mProfile,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(MLogin value)? mLogin,
+    TResult? Function(MProfile value)? mProfile,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(MLogin value)? mLogin,
+    TResult Function(MProfile value)? mProfile,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $LoginModelCopyWith<LoginModel> get copyWith =>
+  $ProfileModelCopyWith<ProfileModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $LoginModelCopyWith<$Res> {
-  factory $LoginModelCopyWith(
-          LoginModel value, $Res Function(LoginModel) then) =
-      _$LoginModelCopyWithImpl<$Res, LoginModel>;
+abstract class $ProfileModelCopyWith<$Res> {
+  factory $ProfileModelCopyWith(
+          ProfileModel value, $Res Function(ProfileModel) then) =
+      _$ProfileModelCopyWithImpl<$Res, ProfileModel>;
   @useResult
-  $Res call({String? username, String? password});
+  $Res call({String? username, String? name, String? password});
 }
 
 /// @nodoc
-class _$LoginModelCopyWithImpl<$Res, $Val extends LoginModel>
-    implements $LoginModelCopyWith<$Res> {
-  _$LoginModelCopyWithImpl(this._value, this._then);
+class _$ProfileModelCopyWithImpl<$Res, $Val extends ProfileModel>
+    implements $ProfileModelCopyWith<$Res> {
+  _$ProfileModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -83,12 +87,17 @@ class _$LoginModelCopyWithImpl<$Res, $Val extends LoginModel>
   @override
   $Res call({
     Object? username = freezed,
+    Object? name = freezed,
     Object? password = freezed,
   }) {
     return _then(_value.copyWith(
       username: freezed == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: freezed == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String?,
       password: freezed == password
           ? _value.password
@@ -99,31 +108,38 @@ class _$LoginModelCopyWithImpl<$Res, $Val extends LoginModel>
 }
 
 /// @nodoc
-abstract class _$$MLoginCopyWith<$Res> implements $LoginModelCopyWith<$Res> {
-  factory _$$MLoginCopyWith(_$MLogin value, $Res Function(_$MLogin) then) =
-      __$$MLoginCopyWithImpl<$Res>;
+abstract class _$$MProfileCopyWith<$Res>
+    implements $ProfileModelCopyWith<$Res> {
+  factory _$$MProfileCopyWith(
+          _$MProfile value, $Res Function(_$MProfile) then) =
+      __$$MProfileCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? username, String? password});
+  $Res call({String? username, String? name, String? password});
 }
 
 /// @nodoc
-class __$$MLoginCopyWithImpl<$Res>
-    extends _$LoginModelCopyWithImpl<$Res, _$MLogin>
-    implements _$$MLoginCopyWith<$Res> {
-  __$$MLoginCopyWithImpl(_$MLogin _value, $Res Function(_$MLogin) _then)
+class __$$MProfileCopyWithImpl<$Res>
+    extends _$ProfileModelCopyWithImpl<$Res, _$MProfile>
+    implements _$$MProfileCopyWith<$Res> {
+  __$$MProfileCopyWithImpl(_$MProfile _value, $Res Function(_$MProfile) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? username = freezed,
+    Object? name = freezed,
     Object? password = freezed,
   }) {
-    return _then(_$MLogin(
+    return _then(_$MProfile(
       username: freezed == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: freezed == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String?,
       password: freezed == password
           ? _value.password
@@ -135,67 +151,73 @@ class __$$MLoginCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$MLogin implements MLogin {
-  _$MLogin({this.username, this.password});
+class _$MProfile implements MProfile {
+  _$MProfile({this.username, this.name, this.password});
 
-  factory _$MLogin.fromJson(Map<String, dynamic> json) =>
-      _$$MLoginFromJson(json);
+  factory _$MProfile.fromJson(Map<String, dynamic> json) =>
+      _$$MProfileFromJson(json);
 
   @override
   final String? username;
+  @override
+  final String? name;
   @override
   final String? password;
 
   @override
   String toString() {
-    return 'LoginModel.mLogin(username: $username, password: $password)';
+    return 'ProfileModel.mProfile(username: $username, name: $name, password: $password)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$MLogin &&
+            other is _$MProfile &&
             (identical(other.username, username) ||
                 other.username == username) &&
+            (identical(other.name, name) || other.name == name) &&
             (identical(other.password, password) ||
                 other.password == password));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, username, password);
+  int get hashCode => Object.hash(runtimeType, username, name, password);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$MLoginCopyWith<_$MLogin> get copyWith =>
-      __$$MLoginCopyWithImpl<_$MLogin>(this, _$identity);
+  _$$MProfileCopyWith<_$MProfile> get copyWith =>
+      __$$MProfileCopyWithImpl<_$MProfile>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String? username, String? password) mLogin,
+    required TResult Function(String? username, String? name, String? password)
+        mProfile,
   }) {
-    return mLogin(username, password);
+    return mProfile(username, name, password);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String? username, String? password)? mLogin,
+    TResult? Function(String? username, String? name, String? password)?
+        mProfile,
   }) {
-    return mLogin?.call(username, password);
+    return mProfile?.call(username, name, password);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String? username, String? password)? mLogin,
+    TResult Function(String? username, String? name, String? password)?
+        mProfile,
     required TResult orElse(),
   }) {
-    if (mLogin != null) {
-      return mLogin(username, password);
+    if (mProfile != null) {
+      return mProfile(username, name, password);
     }
     return orElse();
   }
@@ -203,50 +225,55 @@ class _$MLogin implements MLogin {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(MLogin value) mLogin,
+    required TResult Function(MProfile value) mProfile,
   }) {
-    return mLogin(this);
+    return mProfile(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(MLogin value)? mLogin,
+    TResult? Function(MProfile value)? mProfile,
   }) {
-    return mLogin?.call(this);
+    return mProfile?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(MLogin value)? mLogin,
+    TResult Function(MProfile value)? mProfile,
     required TResult orElse(),
   }) {
-    if (mLogin != null) {
-      return mLogin(this);
+    if (mProfile != null) {
+      return mProfile(this);
     }
     return orElse();
   }
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$MLoginToJson(
+    return _$$MProfileToJson(
       this,
     );
   }
 }
 
-abstract class MLogin implements LoginModel {
-  factory MLogin({final String? username, final String? password}) = _$MLogin;
+abstract class MProfile implements ProfileModel {
+  factory MProfile(
+      {final String? username,
+      final String? name,
+      final String? password}) = _$MProfile;
 
-  factory MLogin.fromJson(Map<String, dynamic> json) = _$MLogin.fromJson;
+  factory MProfile.fromJson(Map<String, dynamic> json) = _$MProfile.fromJson;
 
   @override
   String? get username;
   @override
+  String? get name;
+  @override
   String? get password;
   @override
   @JsonKey(ignore: true)
-  _$$MLoginCopyWith<_$MLogin> get copyWith =>
+  _$$MProfileCopyWith<_$MProfile> get copyWith =>
       throw _privateConstructorUsedError;
 }

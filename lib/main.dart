@@ -1,25 +1,11 @@
-import 'package:clone_weather/presentation/routers/app_router.dart';
+import 'package:clone_weather/presentation/my_app.dart';
 import 'package:flutter/material.dart';
+import 'package:injectable/injectable.dart';
 
 import 'injection.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
+  await configureEnvironment(Environment.dev);
   runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  MyApp({Key? key}) : super(key: key);
-  final appRouter = getIt<AppRouter>();
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp.router(
-      debugShowCheckedModeBanner: false,
-      routerConfig: appRouter.config(),
-      darkTheme: ThemeData.dark(),
-      theme: ThemeData.light(),
-    );
-  }
 }

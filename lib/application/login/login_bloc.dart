@@ -4,6 +4,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:fpdart/fpdart.dart';
 
+import '../../domain/login/i_login_repo.dart';
+import '../../domain/login/login_objects.dart';
 import '../../infrastructure/login/models/login_model.dart';
 
 part 'login_bloc.freezed.dart';
@@ -12,15 +14,46 @@ part 'login_state.dart';
 
 @injectable
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
-  LoginBloc() : super(LoginState.initial()) {
+  final ILoginRepo repo;
+  LoginBloc(this.repo) : super(LoginState.initial()) {
     on<LoginEvent>((event, emit) async {
-      // event.when(login: () async {
-      //   emit(state.copyWith(isSubmitting: true));
-      //   final failureOrSuccess = await repo.login(
-      //       state.username, state.password);
-      //   emit(state.copyWith(
-      //       isSubmitting: false, options: optionOf(failureOrSuccess)));
-      // });
+      await event.when(
+        init: () async {},
+        usernameChanged: (input) async {
+          emit(state.copyWith(
+              username: LoginUsername(input), isSubmitting: false));
+          if (state.username.isValid() && state.password.isValid()) {
+            emit(state.copyWith(
+              isShowError: false,
+            ));
+          } else {
+            emit(state.copyWith(
+              isShowError: true,
+            ));
+          }
+        },
+        passwordChanged: (input) async {
+          emit(state.copyWith(
+              password: LoginPassword(input), isSubmitting: false));
+
+          if (state.username.isValid() && state.password.isValid()) {
+            emit(state.copyWith(
+              isShowError: false,
+            ));
+          } else {
+            emit(state.copyWith(
+              isShowError: true,
+            ));
+          }
+        },
+        login: () async {
+          emit(state.copyWith(isSubmitting: true));
+          final failureOrSuccess = await repo.login(
+              state.username.username, state.password.password);
+          emit(state.copyWith(
+              isSubmitting: false, options: optionOf(failureOrSuccess)));
+        },
+      );
     });
   }
 }

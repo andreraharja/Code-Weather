@@ -5,16 +5,16 @@ class LoginState with _$LoginState {
   const factory LoginState({
     required bool isSubmitting,
     required bool isShowError,
-    required String username,
-    required String password,
+    required LoginUsername username,
+    required LoginPassword password,
     required Option<Either<NetworkError, LoginModel>> options,
   }) = _LoginState;
 
   factory LoginState.initial() => LoginState(
         isSubmitting: false,
         isShowError: true,
-        username: '',
-        password: '',
+        username: LoginUsername(''),
+        password: LoginPassword(''),
         options: none(),
       );
 }

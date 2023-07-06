@@ -4,8 +4,8 @@ part 'failures.freezed.dart';
 
 @freezed
 class Failures<T> with _$Failures<T> {
-  const factory Failures.lenghtToShort({required T input}) = LengthToShort<T>;
-  const factory Failures.exceedingLenght({required T input}) =
+  const factory Failures.lengthToShort({required T input}) = LengthToShort<T>;
+  const factory Failures.exceedingLength({required T input}) =
       ExceedingLenght<T>;
   const factory Failures.invalidPassword({required T input}) =
       InvalidPassword<T>;
