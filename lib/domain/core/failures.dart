@@ -9,4 +9,5 @@ class Failures<T> with _$Failures<T> {
       ExceedingLenght<T>;
   const factory Failures.invalidPassword({required T input}) =
       InvalidPassword<T>;
+  const factory Failures.permissionNotGranted() = PermissionNotGranted<T>;
 }

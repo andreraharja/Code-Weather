@@ -1,22 +1,16 @@
 part of 'weather_bloc.dart';
 
-abstract class WeatherState {
-  WeatherState(this.mWeather, this.locationName);
-  MWeather mWeather;
-  String locationName;
-}
+@freezed
+class WeatherState with _$WeatherState {
+  factory WeatherState(
+          {required bool isLoading,
+          required String location,
+          required Option<Either<NetworkError, WeatherModel>> options}) =
+      _WeatherState;
 
-class WeatherInitial extends WeatherState {
-  WeatherInitial(MWeather mWeather, String locationName)
-      : super(mWeather, locationName);
-}
-
-class LoadingData extends WeatherState {
-  LoadingData(MWeather mWeather, String locationName)
-      : super(mWeather, locationName);
-}
-
-class WeatherResult extends WeatherState {
-  WeatherResult(MWeather mWeather, String locationName)
-      : super(mWeather, locationName);
+  factory WeatherState.initial() => WeatherState(
+        isLoading: true,
+        location: "",
+        options: none(),
+      );
 }

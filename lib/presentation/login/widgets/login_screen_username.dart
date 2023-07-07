@@ -21,7 +21,7 @@ class UsernameField extends StatelessWidget {
         validator: (value) => state.username.value.fold(
           (failure) {
             return failure.maybeMap(
-                lenghtToShort: (_) {
+                lengthToShort: (_) {
                   return 'Username must be 3+ characters';
                 },
                 orElse: () => null);

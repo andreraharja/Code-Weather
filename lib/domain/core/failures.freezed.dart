@@ -16,54 +16,56 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$Failures<T> {
-  T get input => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(T input) lenghtToShort,
-    required TResult Function(T input) exceedingLenght,
+    required TResult Function(T input) lengthToShort,
+    required TResult Function(T input) exceedingLength,
     required TResult Function(T input) invalidPassword,
+    required TResult Function() permissionNotGranted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(T input)? lenghtToShort,
-    TResult? Function(T input)? exceedingLenght,
+    TResult? Function(T input)? lengthToShort,
+    TResult? Function(T input)? exceedingLength,
     TResult? Function(T input)? invalidPassword,
+    TResult? Function()? permissionNotGranted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T input)? lenghtToShort,
-    TResult Function(T input)? exceedingLenght,
+    TResult Function(T input)? lengthToShort,
+    TResult Function(T input)? exceedingLength,
     TResult Function(T input)? invalidPassword,
+    TResult Function()? permissionNotGranted,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(LengthToShort<T> value) lenghtToShort,
-    required TResult Function(ExceedingLenght<T> value) exceedingLenght,
+    required TResult Function(LengthToShort<T> value) lengthToShort,
+    required TResult Function(ExceedingLenght<T> value) exceedingLength,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(PermissionNotGranted<T> value)
+        permissionNotGranted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LengthToShort<T> value)? lenghtToShort,
-    TResult? Function(ExceedingLenght<T> value)? exceedingLenght,
+    TResult? Function(LengthToShort<T> value)? lengthToShort,
+    TResult? Function(ExceedingLenght<T> value)? exceedingLength,
     TResult? Function(InvalidPassword<T> value)? invalidPassword,
+    TResult? Function(PermissionNotGranted<T> value)? permissionNotGranted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(LengthToShort<T> value)? lenghtToShort,
-    TResult Function(ExceedingLenght<T> value)? exceedingLenght,
+    TResult Function(LengthToShort<T> value)? lengthToShort,
+    TResult Function(ExceedingLenght<T> value)? exceedingLength,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(PermissionNotGranted<T> value)? permissionNotGranted,
     required TResult orElse(),
   }) =>
-      throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $FailuresCopyWith<T, Failures<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -72,8 +74,6 @@ abstract class $FailuresCopyWith<T, $Res> {
   factory $FailuresCopyWith(
           Failures<T> value, $Res Function(Failures<T>) then) =
       _$FailuresCopyWithImpl<T, $Res, Failures<T>>;
-  @useResult
-  $Res call({T input});
 }
 
 /// @nodoc
@@ -85,28 +85,13 @@ class _$FailuresCopyWithImpl<T, $Res, $Val extends Failures<T>>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? input = freezed,
-  }) {
-    return _then(_value.copyWith(
-      input: freezed == input
-          ? _value.input
-          : input // ignore: cast_nullable_to_non_nullable
-              as T,
-    ) as $Val);
-  }
 }
 
 /// @nodoc
-abstract class _$$LengthToShortCopyWith<T, $Res>
-    implements $FailuresCopyWith<T, $Res> {
+abstract class _$$LengthToShortCopyWith<T, $Res> {
   factory _$$LengthToShortCopyWith(
           _$LengthToShort<T> value, $Res Function(_$LengthToShort<T>) then) =
       __$$LengthToShortCopyWithImpl<T, $Res>;
-  @override
   @useResult
   $Res call({T input});
 }
@@ -143,7 +128,7 @@ class _$LengthToShort<T> implements LengthToShort<T> {
 
   @override
   String toString() {
-    return 'Failures<$T>.lenghtToShort(input: $input)';
+    return 'Failures<$T>.lengthToShort(input: $input)';
   }
 
   @override
@@ -167,33 +152,36 @@ class _$LengthToShort<T> implements LengthToShort<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(T input) lenghtToShort,
-    required TResult Function(T input) exceedingLenght,
+    required TResult Function(T input) lengthToShort,
+    required TResult Function(T input) exceedingLength,
     required TResult Function(T input) invalidPassword,
+    required TResult Function() permissionNotGranted,
   }) {
-    return lenghtToShort(input);
+    return lengthToShort(input);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(T input)? lenghtToShort,
-    TResult? Function(T input)? exceedingLenght,
+    TResult? Function(T input)? lengthToShort,
+    TResult? Function(T input)? exceedingLength,
     TResult? Function(T input)? invalidPassword,
+    TResult? Function()? permissionNotGranted,
   }) {
-    return lenghtToShort?.call(input);
+    return lengthToShort?.call(input);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T input)? lenghtToShort,
-    TResult Function(T input)? exceedingLenght,
+    TResult Function(T input)? lengthToShort,
+    TResult Function(T input)? exceedingLength,
     TResult Function(T input)? invalidPassword,
+    TResult Function()? permissionNotGranted,
     required TResult orElse(),
   }) {
-    if (lenghtToShort != null) {
-      return lenghtToShort(input);
+    if (lengthToShort != null) {
+      return lengthToShort(input);
     }
     return orElse();
   }
@@ -201,33 +189,37 @@ class _$LengthToShort<T> implements LengthToShort<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(LengthToShort<T> value) lenghtToShort,
-    required TResult Function(ExceedingLenght<T> value) exceedingLenght,
+    required TResult Function(LengthToShort<T> value) lengthToShort,
+    required TResult Function(ExceedingLenght<T> value) exceedingLength,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(PermissionNotGranted<T> value)
+        permissionNotGranted,
   }) {
-    return lenghtToShort(this);
+    return lengthToShort(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LengthToShort<T> value)? lenghtToShort,
-    TResult? Function(ExceedingLenght<T> value)? exceedingLenght,
+    TResult? Function(LengthToShort<T> value)? lengthToShort,
+    TResult? Function(ExceedingLenght<T> value)? exceedingLength,
     TResult? Function(InvalidPassword<T> value)? invalidPassword,
+    TResult? Function(PermissionNotGranted<T> value)? permissionNotGranted,
   }) {
-    return lenghtToShort?.call(this);
+    return lengthToShort?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(LengthToShort<T> value)? lenghtToShort,
-    TResult Function(ExceedingLenght<T> value)? exceedingLenght,
+    TResult Function(LengthToShort<T> value)? lengthToShort,
+    TResult Function(ExceedingLenght<T> value)? exceedingLength,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(PermissionNotGranted<T> value)? permissionNotGranted,
     required TResult orElse(),
   }) {
-    if (lenghtToShort != null) {
-      return lenghtToShort(this);
+    if (lengthToShort != null) {
+      return lengthToShort(this);
     }
     return orElse();
   }
@@ -236,21 +228,17 @@ class _$LengthToShort<T> implements LengthToShort<T> {
 abstract class LengthToShort<T> implements Failures<T> {
   const factory LengthToShort({required final T input}) = _$LengthToShort<T>;
 
-  @override
   T get input;
-  @override
   @JsonKey(ignore: true)
   _$$LengthToShortCopyWith<T, _$LengthToShort<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ExceedingLenghtCopyWith<T, $Res>
-    implements $FailuresCopyWith<T, $Res> {
+abstract class _$$ExceedingLenghtCopyWith<T, $Res> {
   factory _$$ExceedingLenghtCopyWith(_$ExceedingLenght<T> value,
           $Res Function(_$ExceedingLenght<T>) then) =
       __$$ExceedingLenghtCopyWithImpl<T, $Res>;
-  @override
   @useResult
   $Res call({T input});
 }
@@ -287,7 +275,7 @@ class _$ExceedingLenght<T> implements ExceedingLenght<T> {
 
   @override
   String toString() {
-    return 'Failures<$T>.exceedingLenght(input: $input)';
+    return 'Failures<$T>.exceedingLength(input: $input)';
   }
 
   @override
@@ -312,33 +300,36 @@ class _$ExceedingLenght<T> implements ExceedingLenght<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(T input) lenghtToShort,
-    required TResult Function(T input) exceedingLenght,
+    required TResult Function(T input) lengthToShort,
+    required TResult Function(T input) exceedingLength,
     required TResult Function(T input) invalidPassword,
+    required TResult Function() permissionNotGranted,
   }) {
-    return exceedingLenght(input);
+    return exceedingLength(input);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(T input)? lenghtToShort,
-    TResult? Function(T input)? exceedingLenght,
+    TResult? Function(T input)? lengthToShort,
+    TResult? Function(T input)? exceedingLength,
     TResult? Function(T input)? invalidPassword,
+    TResult? Function()? permissionNotGranted,
   }) {
-    return exceedingLenght?.call(input);
+    return exceedingLength?.call(input);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T input)? lenghtToShort,
-    TResult Function(T input)? exceedingLenght,
+    TResult Function(T input)? lengthToShort,
+    TResult Function(T input)? exceedingLength,
     TResult Function(T input)? invalidPassword,
+    TResult Function()? permissionNotGranted,
     required TResult orElse(),
   }) {
-    if (exceedingLenght != null) {
-      return exceedingLenght(input);
+    if (exceedingLength != null) {
+      return exceedingLength(input);
     }
     return orElse();
   }
@@ -346,33 +337,37 @@ class _$ExceedingLenght<T> implements ExceedingLenght<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(LengthToShort<T> value) lenghtToShort,
-    required TResult Function(ExceedingLenght<T> value) exceedingLenght,
+    required TResult Function(LengthToShort<T> value) lengthToShort,
+    required TResult Function(ExceedingLenght<T> value) exceedingLength,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(PermissionNotGranted<T> value)
+        permissionNotGranted,
   }) {
-    return exceedingLenght(this);
+    return exceedingLength(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LengthToShort<T> value)? lenghtToShort,
-    TResult? Function(ExceedingLenght<T> value)? exceedingLenght,
+    TResult? Function(LengthToShort<T> value)? lengthToShort,
+    TResult? Function(ExceedingLenght<T> value)? exceedingLength,
     TResult? Function(InvalidPassword<T> value)? invalidPassword,
+    TResult? Function(PermissionNotGranted<T> value)? permissionNotGranted,
   }) {
-    return exceedingLenght?.call(this);
+    return exceedingLength?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(LengthToShort<T> value)? lenghtToShort,
-    TResult Function(ExceedingLenght<T> value)? exceedingLenght,
+    TResult Function(LengthToShort<T> value)? lengthToShort,
+    TResult Function(ExceedingLenght<T> value)? exceedingLength,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(PermissionNotGranted<T> value)? permissionNotGranted,
     required TResult orElse(),
   }) {
-    if (exceedingLenght != null) {
-      return exceedingLenght(this);
+    if (exceedingLength != null) {
+      return exceedingLength(this);
     }
     return orElse();
   }
@@ -382,21 +377,17 @@ abstract class ExceedingLenght<T> implements Failures<T> {
   const factory ExceedingLenght({required final T input}) =
       _$ExceedingLenght<T>;
 
-  @override
   T get input;
-  @override
   @JsonKey(ignore: true)
   _$$ExceedingLenghtCopyWith<T, _$ExceedingLenght<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$InvalidPasswordCopyWith<T, $Res>
-    implements $FailuresCopyWith<T, $Res> {
+abstract class _$$InvalidPasswordCopyWith<T, $Res> {
   factory _$$InvalidPasswordCopyWith(_$InvalidPassword<T> value,
           $Res Function(_$InvalidPassword<T>) then) =
       __$$InvalidPasswordCopyWithImpl<T, $Res>;
-  @override
   @useResult
   $Res call({T input});
 }
@@ -458,9 +449,10 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(T input) lenghtToShort,
-    required TResult Function(T input) exceedingLenght,
+    required TResult Function(T input) lengthToShort,
+    required TResult Function(T input) exceedingLength,
     required TResult Function(T input) invalidPassword,
+    required TResult Function() permissionNotGranted,
   }) {
     return invalidPassword(input);
   }
@@ -468,9 +460,10 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(T input)? lenghtToShort,
-    TResult? Function(T input)? exceedingLenght,
+    TResult? Function(T input)? lengthToShort,
+    TResult? Function(T input)? exceedingLength,
     TResult? Function(T input)? invalidPassword,
+    TResult? Function()? permissionNotGranted,
   }) {
     return invalidPassword?.call(input);
   }
@@ -478,9 +471,10 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T input)? lenghtToShort,
-    TResult Function(T input)? exceedingLenght,
+    TResult Function(T input)? lengthToShort,
+    TResult Function(T input)? exceedingLength,
     TResult Function(T input)? invalidPassword,
+    TResult Function()? permissionNotGranted,
     required TResult orElse(),
   }) {
     if (invalidPassword != null) {
@@ -492,9 +486,11 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(LengthToShort<T> value) lenghtToShort,
-    required TResult Function(ExceedingLenght<T> value) exceedingLenght,
+    required TResult Function(LengthToShort<T> value) lengthToShort,
+    required TResult Function(ExceedingLenght<T> value) exceedingLength,
     required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(PermissionNotGranted<T> value)
+        permissionNotGranted,
   }) {
     return invalidPassword(this);
   }
@@ -502,9 +498,10 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LengthToShort<T> value)? lenghtToShort,
-    TResult? Function(ExceedingLenght<T> value)? exceedingLenght,
+    TResult? Function(LengthToShort<T> value)? lengthToShort,
+    TResult? Function(ExceedingLenght<T> value)? exceedingLength,
     TResult? Function(InvalidPassword<T> value)? invalidPassword,
+    TResult? Function(PermissionNotGranted<T> value)? permissionNotGranted,
   }) {
     return invalidPassword?.call(this);
   }
@@ -512,9 +509,10 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(LengthToShort<T> value)? lenghtToShort,
-    TResult Function(ExceedingLenght<T> value)? exceedingLenght,
+    TResult Function(LengthToShort<T> value)? lengthToShort,
+    TResult Function(ExceedingLenght<T> value)? exceedingLength,
     TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(PermissionNotGranted<T> value)? permissionNotGranted,
     required TResult orElse(),
   }) {
     if (invalidPassword != null) {
@@ -528,10 +526,124 @@ abstract class InvalidPassword<T> implements Failures<T> {
   const factory InvalidPassword({required final T input}) =
       _$InvalidPassword<T>;
 
-  @override
   T get input;
-  @override
   @JsonKey(ignore: true)
   _$$InvalidPasswordCopyWith<T, _$InvalidPassword<T>> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$PermissionNotGrantedCopyWith<T, $Res> {
+  factory _$$PermissionNotGrantedCopyWith(_$PermissionNotGranted<T> value,
+          $Res Function(_$PermissionNotGranted<T>) then) =
+      __$$PermissionNotGrantedCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$PermissionNotGrantedCopyWithImpl<T, $Res>
+    extends _$FailuresCopyWithImpl<T, $Res, _$PermissionNotGranted<T>>
+    implements _$$PermissionNotGrantedCopyWith<T, $Res> {
+  __$$PermissionNotGrantedCopyWithImpl(_$PermissionNotGranted<T> _value,
+      $Res Function(_$PermissionNotGranted<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$PermissionNotGranted<T> implements PermissionNotGranted<T> {
+  const _$PermissionNotGranted();
+
+  @override
+  String toString() {
+    return 'Failures<$T>.permissionNotGranted()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$PermissionNotGranted<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T input) lengthToShort,
+    required TResult Function(T input) exceedingLength,
+    required TResult Function(T input) invalidPassword,
+    required TResult Function() permissionNotGranted,
+  }) {
+    return permissionNotGranted();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(T input)? lengthToShort,
+    TResult? Function(T input)? exceedingLength,
+    TResult? Function(T input)? invalidPassword,
+    TResult? Function()? permissionNotGranted,
+  }) {
+    return permissionNotGranted?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T input)? lengthToShort,
+    TResult Function(T input)? exceedingLength,
+    TResult Function(T input)? invalidPassword,
+    TResult Function()? permissionNotGranted,
+    required TResult orElse(),
+  }) {
+    if (permissionNotGranted != null) {
+      return permissionNotGranted();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LengthToShort<T> value) lengthToShort,
+    required TResult Function(ExceedingLenght<T> value) exceedingLength,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(PermissionNotGranted<T> value)
+        permissionNotGranted,
+  }) {
+    return permissionNotGranted(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LengthToShort<T> value)? lengthToShort,
+    TResult? Function(ExceedingLenght<T> value)? exceedingLength,
+    TResult? Function(InvalidPassword<T> value)? invalidPassword,
+    TResult? Function(PermissionNotGranted<T> value)? permissionNotGranted,
+  }) {
+    return permissionNotGranted?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LengthToShort<T> value)? lengthToShort,
+    TResult Function(ExceedingLenght<T> value)? exceedingLength,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(PermissionNotGranted<T> value)? permissionNotGranted,
+    required TResult orElse(),
+  }) {
+    if (permissionNotGranted != null) {
+      return permissionNotGranted(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class PermissionNotGranted<T> implements Failures<T> {
+  const factory PermissionNotGranted() = _$PermissionNotGranted<T>;
 }

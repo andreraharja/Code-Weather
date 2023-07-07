@@ -22,7 +22,7 @@ class PasswordField extends StatelessWidget {
             .add(LoginEvent.passwordChanged(input: value)),
         validator: (value) => state.password.value.fold(
             (l) => l.maybeMap(
-                lenghtToShort: (_) => 'Password must be 6+ characters',
+                lengthToShort: (_) => 'Password must be 6+ characters',
                 orElse: () => null),
             (r) => null),
       ),

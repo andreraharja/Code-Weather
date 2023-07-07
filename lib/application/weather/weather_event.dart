@@ -1,5 +1,7 @@
 part of 'weather_bloc.dart';
 
-abstract class WeatherEvent {}
-
-class FetchWeatherEvent extends WeatherEvent {}
+@freezed
+abstract class WeatherEvent with _$WeatherEvent {
+  factory WeatherEvent.init() = _Init;
+  factory WeatherEvent.locationChanged() = _LocationChanged;
+}

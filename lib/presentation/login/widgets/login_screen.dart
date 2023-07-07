@@ -17,7 +17,7 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<LoginBloc, LoginState>(
       listener: (context, state) {
-        state.options.match(
+        state.options.fold(
           () => null,
           (failureOrSuccess) {
             failureOrSuccess.fold(
@@ -28,7 +28,7 @@ class LoginScreen extends StatelessWidget {
                         .showSnackBar(
                             const SnackBar(content: Text("No Internet"))));
               },
-              (login) => context.router.replace(const WeatherRoute()),
+              (login) => context.router.replace(const TabBarRoute()),
             );
           },
         );
