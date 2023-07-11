@@ -23,12 +23,14 @@ class LoginScreen extends StatelessWidget {
             failureOrSuccess.fold(
               (error) {
                 error.maybeWhen(
-                    orElse: () => null,
+                    orElse: () => ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text("Login Failed"))),
                     noInternet: () => ScaffoldMessenger.of(context)
                         .showSnackBar(
                             const SnackBar(content: Text("No Internet"))));
               },
-              (login) => context.router.replace(const TabBarRoute()),
+              (login) => context.router.replace(TabBarRoute(
+                  username: login.username!, password: login.password!)),
             );
           },
         );
@@ -63,7 +65,17 @@ class LoginScreen extends StatelessWidget {
                   const SizedBox(
                     height: 50,
                   ),
-                  const Text('New User? Create Account')
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text('New User ?'),
+                      TextButton(
+                          onPressed: () {
+                            context.router.push(const RegisterRoute());
+                          },
+                          child: const Text('Create Account'))
+                    ],
+                  )
                 ],
               ),
             ),

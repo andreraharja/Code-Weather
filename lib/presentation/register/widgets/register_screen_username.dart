@@ -1,23 +1,23 @@
+import 'package:clone_weather/application/user/user_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../application/login/login_bloc.dart';
+import '../../../application/register/register_bloc.dart';
 
 class UsernameField extends StatelessWidget {
   const UsernameField({super.key, required this.state});
 
-  final LoginState state;
+  final RegisterState state;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 15),
+      padding:
+          const EdgeInsets.only(left: 15.0, right: 15.0, top: 15, bottom: 0),
       child: TextFormField(
         autovalidateMode: AutovalidateMode.onUserInteraction,
         onChanged: (value) {
-          context
-              .read<LoginBloc>()
-              .add(LoginEvent.usernameChanged(input: value));
+          context.read<UserBloc>().add(UserEvent.usernameChanged(input: value));
         },
         validator: (value) => state.username.value.fold(
           (failure) {

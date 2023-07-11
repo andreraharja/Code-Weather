@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'login_bloc.dart';
+part of 'register_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,13 +15,13 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$LoginEvent {
+mixin _$RegisterEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() init,
     required TResult Function(String input) usernameChanged,
     required TResult Function(String input) passwordChanged,
-    required TResult Function() login,
+    required TResult Function() registerData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -29,7 +29,7 @@ mixin _$LoginEvent {
     TResult? Function()? init,
     TResult? Function(String input)? usernameChanged,
     TResult? Function(String input)? passwordChanged,
-    TResult? Function()? login,
+    TResult? Function()? registerData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -37,7 +37,7 @@ mixin _$LoginEvent {
     TResult Function()? init,
     TResult Function(String input)? usernameChanged,
     TResult Function(String input)? passwordChanged,
-    TResult Function()? login,
+    TResult Function()? registerData,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -46,7 +46,7 @@ mixin _$LoginEvent {
     required TResult Function(_Init value) init,
     required TResult Function(_UsernameChanged value) usernameChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
-    required TResult Function(_Login value) login,
+    required TResult Function(_RegisterData value) registerData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -54,7 +54,7 @@ mixin _$LoginEvent {
     TResult? Function(_Init value)? init,
     TResult? Function(_UsernameChanged value)? usernameChanged,
     TResult? Function(_PasswordChanged value)? passwordChanged,
-    TResult? Function(_Login value)? login,
+    TResult? Function(_RegisterData value)? registerData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -62,23 +62,23 @@ mixin _$LoginEvent {
     TResult Function(_Init value)? init,
     TResult Function(_UsernameChanged value)? usernameChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
-    TResult Function(_Login value)? login,
+    TResult Function(_RegisterData value)? registerData,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $LoginEventCopyWith<$Res> {
-  factory $LoginEventCopyWith(
-          LoginEvent value, $Res Function(LoginEvent) then) =
-      _$LoginEventCopyWithImpl<$Res, LoginEvent>;
+abstract class $RegisterEventCopyWith<$Res> {
+  factory $RegisterEventCopyWith(
+          RegisterEvent value, $Res Function(RegisterEvent) then) =
+      _$RegisterEventCopyWithImpl<$Res, RegisterEvent>;
 }
 
 /// @nodoc
-class _$LoginEventCopyWithImpl<$Res, $Val extends LoginEvent>
-    implements $LoginEventCopyWith<$Res> {
-  _$LoginEventCopyWithImpl(this._value, this._then);
+class _$RegisterEventCopyWithImpl<$Res, $Val extends RegisterEvent>
+    implements $RegisterEventCopyWith<$Res> {
+  _$RegisterEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -94,7 +94,7 @@ abstract class _$$_InitCopyWith<$Res> {
 
 /// @nodoc
 class __$$_InitCopyWithImpl<$Res>
-    extends _$LoginEventCopyWithImpl<$Res, _$_Init>
+    extends _$RegisterEventCopyWithImpl<$Res, _$_Init>
     implements _$$_InitCopyWith<$Res> {
   __$$_InitCopyWithImpl(_$_Init _value, $Res Function(_$_Init) _then)
       : super(_value, _then);
@@ -107,7 +107,7 @@ class _$_Init implements _Init {
 
   @override
   String toString() {
-    return 'LoginEvent.init()';
+    return 'RegisterEvent.init()';
   }
 
   @override
@@ -125,7 +125,7 @@ class _$_Init implements _Init {
     required TResult Function() init,
     required TResult Function(String input) usernameChanged,
     required TResult Function(String input) passwordChanged,
-    required TResult Function() login,
+    required TResult Function() registerData,
   }) {
     return init();
   }
@@ -136,7 +136,7 @@ class _$_Init implements _Init {
     TResult? Function()? init,
     TResult? Function(String input)? usernameChanged,
     TResult? Function(String input)? passwordChanged,
-    TResult? Function()? login,
+    TResult? Function()? registerData,
   }) {
     return init?.call();
   }
@@ -147,7 +147,7 @@ class _$_Init implements _Init {
     TResult Function()? init,
     TResult Function(String input)? usernameChanged,
     TResult Function(String input)? passwordChanged,
-    TResult Function()? login,
+    TResult Function()? registerData,
     required TResult orElse(),
   }) {
     if (init != null) {
@@ -162,7 +162,7 @@ class _$_Init implements _Init {
     required TResult Function(_Init value) init,
     required TResult Function(_UsernameChanged value) usernameChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
-    required TResult Function(_Login value) login,
+    required TResult Function(_RegisterData value) registerData,
   }) {
     return init(this);
   }
@@ -173,7 +173,7 @@ class _$_Init implements _Init {
     TResult? Function(_Init value)? init,
     TResult? Function(_UsernameChanged value)? usernameChanged,
     TResult? Function(_PasswordChanged value)? passwordChanged,
-    TResult? Function(_Login value)? login,
+    TResult? Function(_RegisterData value)? registerData,
   }) {
     return init?.call(this);
   }
@@ -184,7 +184,7 @@ class _$_Init implements _Init {
     TResult Function(_Init value)? init,
     TResult Function(_UsernameChanged value)? usernameChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
-    TResult Function(_Login value)? login,
+    TResult Function(_RegisterData value)? registerData,
     required TResult orElse(),
   }) {
     if (init != null) {
@@ -194,7 +194,7 @@ class _$_Init implements _Init {
   }
 }
 
-abstract class _Init implements LoginEvent {
+abstract class _Init implements RegisterEvent {
   const factory _Init() = _$_Init;
 }
 
@@ -209,7 +209,7 @@ abstract class _$$_UsernameChangedCopyWith<$Res> {
 
 /// @nodoc
 class __$$_UsernameChangedCopyWithImpl<$Res>
-    extends _$LoginEventCopyWithImpl<$Res, _$_UsernameChanged>
+    extends _$RegisterEventCopyWithImpl<$Res, _$_UsernameChanged>
     implements _$$_UsernameChangedCopyWith<$Res> {
   __$$_UsernameChangedCopyWithImpl(
       _$_UsernameChanged _value, $Res Function(_$_UsernameChanged) _then)
@@ -239,7 +239,7 @@ class _$_UsernameChanged implements _UsernameChanged {
 
   @override
   String toString() {
-    return 'LoginEvent.usernameChanged(input: $input)';
+    return 'RegisterEvent.usernameChanged(input: $input)';
   }
 
   @override
@@ -265,7 +265,7 @@ class _$_UsernameChanged implements _UsernameChanged {
     required TResult Function() init,
     required TResult Function(String input) usernameChanged,
     required TResult Function(String input) passwordChanged,
-    required TResult Function() login,
+    required TResult Function() registerData,
   }) {
     return usernameChanged(input);
   }
@@ -276,7 +276,7 @@ class _$_UsernameChanged implements _UsernameChanged {
     TResult? Function()? init,
     TResult? Function(String input)? usernameChanged,
     TResult? Function(String input)? passwordChanged,
-    TResult? Function()? login,
+    TResult? Function()? registerData,
   }) {
     return usernameChanged?.call(input);
   }
@@ -287,7 +287,7 @@ class _$_UsernameChanged implements _UsernameChanged {
     TResult Function()? init,
     TResult Function(String input)? usernameChanged,
     TResult Function(String input)? passwordChanged,
-    TResult Function()? login,
+    TResult Function()? registerData,
     required TResult orElse(),
   }) {
     if (usernameChanged != null) {
@@ -302,7 +302,7 @@ class _$_UsernameChanged implements _UsernameChanged {
     required TResult Function(_Init value) init,
     required TResult Function(_UsernameChanged value) usernameChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
-    required TResult Function(_Login value) login,
+    required TResult Function(_RegisterData value) registerData,
   }) {
     return usernameChanged(this);
   }
@@ -313,7 +313,7 @@ class _$_UsernameChanged implements _UsernameChanged {
     TResult? Function(_Init value)? init,
     TResult? Function(_UsernameChanged value)? usernameChanged,
     TResult? Function(_PasswordChanged value)? passwordChanged,
-    TResult? Function(_Login value)? login,
+    TResult? Function(_RegisterData value)? registerData,
   }) {
     return usernameChanged?.call(this);
   }
@@ -324,7 +324,7 @@ class _$_UsernameChanged implements _UsernameChanged {
     TResult Function(_Init value)? init,
     TResult Function(_UsernameChanged value)? usernameChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
-    TResult Function(_Login value)? login,
+    TResult Function(_RegisterData value)? registerData,
     required TResult orElse(),
   }) {
     if (usernameChanged != null) {
@@ -334,7 +334,7 @@ class _$_UsernameChanged implements _UsernameChanged {
   }
 }
 
-abstract class _UsernameChanged implements LoginEvent {
+abstract class _UsernameChanged implements RegisterEvent {
   const factory _UsernameChanged({required final String input}) =
       _$_UsernameChanged;
 
@@ -355,7 +355,7 @@ abstract class _$$_PasswordChangedCopyWith<$Res> {
 
 /// @nodoc
 class __$$_PasswordChangedCopyWithImpl<$Res>
-    extends _$LoginEventCopyWithImpl<$Res, _$_PasswordChanged>
+    extends _$RegisterEventCopyWithImpl<$Res, _$_PasswordChanged>
     implements _$$_PasswordChangedCopyWith<$Res> {
   __$$_PasswordChangedCopyWithImpl(
       _$_PasswordChanged _value, $Res Function(_$_PasswordChanged) _then)
@@ -385,7 +385,7 @@ class _$_PasswordChanged implements _PasswordChanged {
 
   @override
   String toString() {
-    return 'LoginEvent.passwordChanged(input: $input)';
+    return 'RegisterEvent.passwordChanged(input: $input)';
   }
 
   @override
@@ -411,7 +411,7 @@ class _$_PasswordChanged implements _PasswordChanged {
     required TResult Function() init,
     required TResult Function(String input) usernameChanged,
     required TResult Function(String input) passwordChanged,
-    required TResult Function() login,
+    required TResult Function() registerData,
   }) {
     return passwordChanged(input);
   }
@@ -422,7 +422,7 @@ class _$_PasswordChanged implements _PasswordChanged {
     TResult? Function()? init,
     TResult? Function(String input)? usernameChanged,
     TResult? Function(String input)? passwordChanged,
-    TResult? Function()? login,
+    TResult? Function()? registerData,
   }) {
     return passwordChanged?.call(input);
   }
@@ -433,7 +433,7 @@ class _$_PasswordChanged implements _PasswordChanged {
     TResult Function()? init,
     TResult Function(String input)? usernameChanged,
     TResult Function(String input)? passwordChanged,
-    TResult Function()? login,
+    TResult Function()? registerData,
     required TResult orElse(),
   }) {
     if (passwordChanged != null) {
@@ -448,7 +448,7 @@ class _$_PasswordChanged implements _PasswordChanged {
     required TResult Function(_Init value) init,
     required TResult Function(_UsernameChanged value) usernameChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
-    required TResult Function(_Login value) login,
+    required TResult Function(_RegisterData value) registerData,
   }) {
     return passwordChanged(this);
   }
@@ -459,7 +459,7 @@ class _$_PasswordChanged implements _PasswordChanged {
     TResult? Function(_Init value)? init,
     TResult? Function(_UsernameChanged value)? usernameChanged,
     TResult? Function(_PasswordChanged value)? passwordChanged,
-    TResult? Function(_Login value)? login,
+    TResult? Function(_RegisterData value)? registerData,
   }) {
     return passwordChanged?.call(this);
   }
@@ -470,7 +470,7 @@ class _$_PasswordChanged implements _PasswordChanged {
     TResult Function(_Init value)? init,
     TResult Function(_UsernameChanged value)? usernameChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
-    TResult Function(_Login value)? login,
+    TResult Function(_RegisterData value)? registerData,
     required TResult orElse(),
   }) {
     if (passwordChanged != null) {
@@ -480,7 +480,7 @@ class _$_PasswordChanged implements _PasswordChanged {
   }
 }
 
-abstract class _PasswordChanged implements LoginEvent {
+abstract class _PasswordChanged implements RegisterEvent {
   const factory _PasswordChanged({required final String input}) =
       _$_PasswordChanged;
 
@@ -491,33 +491,35 @@ abstract class _PasswordChanged implements LoginEvent {
 }
 
 /// @nodoc
-abstract class _$$_LoginCopyWith<$Res> {
-  factory _$$_LoginCopyWith(_$_Login value, $Res Function(_$_Login) then) =
-      __$$_LoginCopyWithImpl<$Res>;
+abstract class _$$_RegisterDataCopyWith<$Res> {
+  factory _$$_RegisterDataCopyWith(
+          _$_RegisterData value, $Res Function(_$_RegisterData) then) =
+      __$$_RegisterDataCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_LoginCopyWithImpl<$Res>
-    extends _$LoginEventCopyWithImpl<$Res, _$_Login>
-    implements _$$_LoginCopyWith<$Res> {
-  __$$_LoginCopyWithImpl(_$_Login _value, $Res Function(_$_Login) _then)
+class __$$_RegisterDataCopyWithImpl<$Res>
+    extends _$RegisterEventCopyWithImpl<$Res, _$_RegisterData>
+    implements _$$_RegisterDataCopyWith<$Res> {
+  __$$_RegisterDataCopyWithImpl(
+      _$_RegisterData _value, $Res Function(_$_RegisterData) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Login implements _Login {
-  const _$_Login();
+class _$_RegisterData implements _RegisterData {
+  const _$_RegisterData();
 
   @override
   String toString() {
-    return 'LoginEvent.login()';
+    return 'RegisterEvent.registerData()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Login);
+        (other.runtimeType == runtimeType && other is _$_RegisterData);
   }
 
   @override
@@ -529,9 +531,9 @@ class _$_Login implements _Login {
     required TResult Function() init,
     required TResult Function(String input) usernameChanged,
     required TResult Function(String input) passwordChanged,
-    required TResult Function() login,
+    required TResult Function() registerData,
   }) {
-    return login();
+    return registerData();
   }
 
   @override
@@ -540,9 +542,9 @@ class _$_Login implements _Login {
     TResult? Function()? init,
     TResult? Function(String input)? usernameChanged,
     TResult? Function(String input)? passwordChanged,
-    TResult? Function()? login,
+    TResult? Function()? registerData,
   }) {
-    return login?.call();
+    return registerData?.call();
   }
 
   @override
@@ -551,11 +553,11 @@ class _$_Login implements _Login {
     TResult Function()? init,
     TResult Function(String input)? usernameChanged,
     TResult Function(String input)? passwordChanged,
-    TResult Function()? login,
+    TResult Function()? registerData,
     required TResult orElse(),
   }) {
-    if (login != null) {
-      return login();
+    if (registerData != null) {
+      return registerData();
     }
     return orElse();
   }
@@ -566,9 +568,9 @@ class _$_Login implements _Login {
     required TResult Function(_Init value) init,
     required TResult Function(_UsernameChanged value) usernameChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
-    required TResult Function(_Login value) login,
+    required TResult Function(_RegisterData value) registerData,
   }) {
-    return login(this);
+    return registerData(this);
   }
 
   @override
@@ -577,9 +579,9 @@ class _$_Login implements _Login {
     TResult? Function(_Init value)? init,
     TResult? Function(_UsernameChanged value)? usernameChanged,
     TResult? Function(_PasswordChanged value)? passwordChanged,
-    TResult? Function(_Login value)? login,
+    TResult? Function(_RegisterData value)? registerData,
   }) {
-    return login?.call(this);
+    return registerData?.call(this);
   }
 
   @override
@@ -588,52 +590,52 @@ class _$_Login implements _Login {
     TResult Function(_Init value)? init,
     TResult Function(_UsernameChanged value)? usernameChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
-    TResult Function(_Login value)? login,
+    TResult Function(_RegisterData value)? registerData,
     required TResult orElse(),
   }) {
-    if (login != null) {
-      return login(this);
+    if (registerData != null) {
+      return registerData(this);
     }
     return orElse();
   }
 }
 
-abstract class _Login implements LoginEvent {
-  const factory _Login() = _$_Login;
+abstract class _RegisterData implements RegisterEvent {
+  const factory _RegisterData() = _$_RegisterData;
 }
 
 /// @nodoc
-mixin _$LoginState {
+mixin _$RegisterState {
   bool get isSubmitting => throw _privateConstructorUsedError;
   bool get isShowError => throw _privateConstructorUsedError;
   FieldUsername get username => throw _privateConstructorUsedError;
   FieldPassword get password => throw _privateConstructorUsedError;
-  Option<Either<NetworkError, LoginModel>> get options =>
+  Option<Either<NetworkError, UserModel>> get options =>
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $LoginStateCopyWith<LoginState> get copyWith =>
+  $RegisterStateCopyWith<RegisterState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $LoginStateCopyWith<$Res> {
-  factory $LoginStateCopyWith(
-          LoginState value, $Res Function(LoginState) then) =
-      _$LoginStateCopyWithImpl<$Res, LoginState>;
+abstract class $RegisterStateCopyWith<$Res> {
+  factory $RegisterStateCopyWith(
+          RegisterState value, $Res Function(RegisterState) then) =
+      _$RegisterStateCopyWithImpl<$Res, RegisterState>;
   @useResult
   $Res call(
       {bool isSubmitting,
       bool isShowError,
       FieldUsername username,
       FieldPassword password,
-      Option<Either<NetworkError, LoginModel>> options});
+      Option<Either<NetworkError, UserModel>> options});
 }
 
 /// @nodoc
-class _$LoginStateCopyWithImpl<$Res, $Val extends LoginState>
-    implements $LoginStateCopyWith<$Res> {
-  _$LoginStateCopyWithImpl(this._value, this._then);
+class _$RegisterStateCopyWithImpl<$Res, $Val extends RegisterState>
+    implements $RegisterStateCopyWith<$Res> {
+  _$RegisterStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -669,17 +671,17 @@ class _$LoginStateCopyWithImpl<$Res, $Val extends LoginState>
       options: null == options
           ? _value.options
           : options // ignore: cast_nullable_to_non_nullable
-              as Option<Either<NetworkError, LoginModel>>,
+              as Option<Either<NetworkError, UserModel>>,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$_LoginStateCopyWith<$Res>
-    implements $LoginStateCopyWith<$Res> {
-  factory _$$_LoginStateCopyWith(
-          _$_LoginState value, $Res Function(_$_LoginState) then) =
-      __$$_LoginStateCopyWithImpl<$Res>;
+abstract class _$$_RegisterStateCopyWith<$Res>
+    implements $RegisterStateCopyWith<$Res> {
+  factory _$$_RegisterStateCopyWith(
+          _$_RegisterState value, $Res Function(_$_RegisterState) then) =
+      __$$_RegisterStateCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -687,15 +689,15 @@ abstract class _$$_LoginStateCopyWith<$Res>
       bool isShowError,
       FieldUsername username,
       FieldPassword password,
-      Option<Either<NetworkError, LoginModel>> options});
+      Option<Either<NetworkError, UserModel>> options});
 }
 
 /// @nodoc
-class __$$_LoginStateCopyWithImpl<$Res>
-    extends _$LoginStateCopyWithImpl<$Res, _$_LoginState>
-    implements _$$_LoginStateCopyWith<$Res> {
-  __$$_LoginStateCopyWithImpl(
-      _$_LoginState _value, $Res Function(_$_LoginState) _then)
+class __$$_RegisterStateCopyWithImpl<$Res>
+    extends _$RegisterStateCopyWithImpl<$Res, _$_RegisterState>
+    implements _$$_RegisterStateCopyWith<$Res> {
+  __$$_RegisterStateCopyWithImpl(
+      _$_RegisterState _value, $Res Function(_$_RegisterState) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -707,7 +709,7 @@ class __$$_LoginStateCopyWithImpl<$Res>
     Object? password = null,
     Object? options = null,
   }) {
-    return _then(_$_LoginState(
+    return _then(_$_RegisterState(
       isSubmitting: null == isSubmitting
           ? _value.isSubmitting
           : isSubmitting // ignore: cast_nullable_to_non_nullable
@@ -727,15 +729,15 @@ class __$$_LoginStateCopyWithImpl<$Res>
       options: null == options
           ? _value.options
           : options // ignore: cast_nullable_to_non_nullable
-              as Option<Either<NetworkError, LoginModel>>,
+              as Option<Either<NetworkError, UserModel>>,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_LoginState implements _LoginState {
-  const _$_LoginState(
+class _$_RegisterState implements _RegisterState {
+  const _$_RegisterState(
       {required this.isSubmitting,
       required this.isShowError,
       required this.username,
@@ -751,18 +753,18 @@ class _$_LoginState implements _LoginState {
   @override
   final FieldPassword password;
   @override
-  final Option<Either<NetworkError, LoginModel>> options;
+  final Option<Either<NetworkError, UserModel>> options;
 
   @override
   String toString() {
-    return 'LoginState(isSubmitting: $isSubmitting, isShowError: $isShowError, username: $username, password: $password, options: $options)';
+    return 'RegisterState(isSubmitting: $isSubmitting, isShowError: $isShowError, username: $username, password: $password, options: $options)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_LoginState &&
+            other is _$_RegisterState &&
             (identical(other.isSubmitting, isSubmitting) ||
                 other.isSubmitting == isSubmitting) &&
             (identical(other.isShowError, isShowError) ||
@@ -781,18 +783,18 @@ class _$_LoginState implements _LoginState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_LoginStateCopyWith<_$_LoginState> get copyWith =>
-      __$$_LoginStateCopyWithImpl<_$_LoginState>(this, _$identity);
+  _$$_RegisterStateCopyWith<_$_RegisterState> get copyWith =>
+      __$$_RegisterStateCopyWithImpl<_$_RegisterState>(this, _$identity);
 }
 
-abstract class _LoginState implements LoginState {
-  const factory _LoginState(
+abstract class _RegisterState implements RegisterState {
+  const factory _RegisterState(
           {required final bool isSubmitting,
           required final bool isShowError,
           required final FieldUsername username,
           required final FieldPassword password,
-          required final Option<Either<NetworkError, LoginModel>> options}) =
-      _$_LoginState;
+          required final Option<Either<NetworkError, UserModel>> options}) =
+      _$_RegisterState;
 
   @override
   bool get isSubmitting;
@@ -803,9 +805,9 @@ abstract class _LoginState implements LoginState {
   @override
   FieldPassword get password;
   @override
-  Option<Either<NetworkError, LoginModel>> get options;
+  Option<Either<NetworkError, UserModel>> get options;
   @override
   @JsonKey(ignore: true)
-  _$$_LoginStateCopyWith<_$_LoginState> get copyWith =>
+  _$$_RegisterStateCopyWith<_$_RegisterState> get copyWith =>
       throw _privateConstructorUsedError;
 }

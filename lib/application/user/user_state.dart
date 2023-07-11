@@ -1,16 +1,16 @@
-part of 'login_bloc.dart';
+part of 'user_bloc.dart';
 
 @freezed
-class LoginState with _$LoginState {
-  const factory LoginState({
+class UserState with _$UserState {
+  const factory UserState({
     required bool isSubmitting,
     required bool isShowError,
     required FieldUsername username,
     required FieldPassword password,
-    required Option<Either<NetworkError, LoginModel>> options,
-  }) = _LoginState;
+    required Option<Either<NetworkError, UserModel>> options,
+  }) = _UserState;
 
-  factory LoginState.initial() => LoginState(
+  factory UserState.initial() => UserState(
         isSubmitting: false,
         isShowError: true,
         username: FieldUsername(''),

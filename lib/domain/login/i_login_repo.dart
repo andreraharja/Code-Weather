@@ -4,6 +4,7 @@ import 'package:fpdart/fpdart.dart';
 import '../../infrastructure/login/models/login_model.dart';
 
 abstract class ILoginRepo {
+  Future<int> getDataTest();
   Future<Either<NetworkError, LoginModel>> login(
       String username, String password);
 }

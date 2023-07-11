@@ -5,7 +5,7 @@ import 'package:injectable/injectable.dart';
 import 'package:fpdart/fpdart.dart';
 
 import '../../domain/login/i_login_repo.dart';
-import '../../domain/login/login_objects.dart';
+import '../../domain/core/user_objects.dart';
 import '../../infrastructure/login/models/login_model.dart';
 
 part 'login_bloc.freezed.dart';
@@ -18,10 +18,12 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   LoginBloc(this.repo) : super(LoginState.initial()) {
     on<LoginEvent>((event, emit) async {
       await event.when(
-        init: () async {},
+        init: () async {
+          await repo.getDataTest();
+        },
         usernameChanged: (input) async {
           emit(state.copyWith(
-              username: LoginUsername(input), isSubmitting: false));
+              username: FieldUsername(input), isSubmitting: false));
           if (state.username.isValid() && state.password.isValid()) {
             emit(state.copyWith(
               isShowError: false,
@@ -34,7 +36,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         },
         passwordChanged: (input) async {
           emit(state.copyWith(
-              password: LoginPassword(input), isSubmitting: false));
+              password: FieldPassword(input), isSubmitting: false));
 
           if (state.username.isValid() && state.password.isValid()) {
             emit(state.copyWith(
