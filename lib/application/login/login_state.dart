@@ -7,7 +7,7 @@ class LoginState with _$LoginState {
     required bool isShowError,
     required FieldUsername username,
     required FieldPassword password,
-    required Option<Either<NetworkError, LoginModel>> options,
+    required Option<Either<NetworkError, UserModel>> options,
   }) = _LoginState;
 
   factory LoginState.initial() => LoginState(

@@ -18,7 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$UserEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String password) init,
+    required TResult Function() init,
     required TResult Function(String input) usernameChanged,
     required TResult Function(String input) passwordChanged,
     required TResult Function() updateData,
@@ -26,7 +26,7 @@ mixin _$UserEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String password)? init,
+    TResult? Function()? init,
     TResult? Function(String input)? usernameChanged,
     TResult? Function(String input)? passwordChanged,
     TResult? Function()? updateData,
@@ -34,7 +34,7 @@ mixin _$UserEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String password)? init,
+    TResult Function()? init,
     TResult Function(String input)? usernameChanged,
     TResult Function(String input)? passwordChanged,
     TResult Function()? updateData,
@@ -89,8 +89,6 @@ class _$UserEventCopyWithImpl<$Res, $Val extends UserEvent>
 abstract class _$$_InitCopyWith<$Res> {
   factory _$$_InitCopyWith(_$_Init value, $Res Function(_$_Init) then) =
       __$$_InitCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String password});
 }
 
 /// @nodoc
@@ -98,85 +96,60 @@ class __$$_InitCopyWithImpl<$Res> extends _$UserEventCopyWithImpl<$Res, _$_Init>
     implements _$$_InitCopyWith<$Res> {
   __$$_InitCopyWithImpl(_$_Init _value, $Res Function(_$_Init) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? password = null,
-  }) {
-    return _then(_$_Init(
-      password: null == password
-          ? _value.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$_Init implements _Init {
-  const _$_Init({required this.password});
-
-  @override
-  final String password;
+  _$_Init();
 
   @override
   String toString() {
-    return 'UserEvent.init(password: $password)';
+    return 'UserEvent.init()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_Init &&
-            (identical(other.password, password) ||
-                other.password == password));
+        (other.runtimeType == runtimeType && other is _$_Init);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, password);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_InitCopyWith<_$_Init> get copyWith =>
-      __$$_InitCopyWithImpl<_$_Init>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String password) init,
+    required TResult Function() init,
     required TResult Function(String input) usernameChanged,
     required TResult Function(String input) passwordChanged,
     required TResult Function() updateData,
   }) {
-    return init(password);
+    return init();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String password)? init,
+    TResult? Function()? init,
     TResult? Function(String input)? usernameChanged,
     TResult? Function(String input)? passwordChanged,
     TResult? Function()? updateData,
   }) {
-    return init?.call(password);
+    return init?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String password)? init,
+    TResult Function()? init,
     TResult Function(String input)? usernameChanged,
     TResult Function(String input)? passwordChanged,
     TResult Function()? updateData,
     required TResult orElse(),
   }) {
     if (init != null) {
-      return init(password);
+      return init();
     }
     return orElse();
   }
@@ -220,11 +193,7 @@ class _$_Init implements _Init {
 }
 
 abstract class _Init implements UserEvent {
-  const factory _Init({required final String password}) = _$_Init;
-
-  String get password;
-  @JsonKey(ignore: true)
-  _$$_InitCopyWith<_$_Init> get copyWith => throw _privateConstructorUsedError;
+  factory _Init() = _$_Init;
 }
 
 /// @nodoc
@@ -261,7 +230,7 @@ class __$$_UsernameChangedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_UsernameChanged implements _UsernameChanged {
-  const _$_UsernameChanged({required this.input});
+  _$_UsernameChanged({required this.input});
 
   @override
   final String input;
@@ -291,7 +260,7 @@ class _$_UsernameChanged implements _UsernameChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String password) init,
+    required TResult Function() init,
     required TResult Function(String input) usernameChanged,
     required TResult Function(String input) passwordChanged,
     required TResult Function() updateData,
@@ -302,7 +271,7 @@ class _$_UsernameChanged implements _UsernameChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String password)? init,
+    TResult? Function()? init,
     TResult? Function(String input)? usernameChanged,
     TResult? Function(String input)? passwordChanged,
     TResult? Function()? updateData,
@@ -313,7 +282,7 @@ class _$_UsernameChanged implements _UsernameChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String password)? init,
+    TResult Function()? init,
     TResult Function(String input)? usernameChanged,
     TResult Function(String input)? passwordChanged,
     TResult Function()? updateData,
@@ -364,8 +333,7 @@ class _$_UsernameChanged implements _UsernameChanged {
 }
 
 abstract class _UsernameChanged implements UserEvent {
-  const factory _UsernameChanged({required final String input}) =
-      _$_UsernameChanged;
+  factory _UsernameChanged({required final String input}) = _$_UsernameChanged;
 
   String get input;
   @JsonKey(ignore: true)
@@ -407,7 +375,7 @@ class __$$_PasswordChangedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_PasswordChanged implements _PasswordChanged {
-  const _$_PasswordChanged({required this.input});
+  _$_PasswordChanged({required this.input});
 
   @override
   final String input;
@@ -437,7 +405,7 @@ class _$_PasswordChanged implements _PasswordChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String password) init,
+    required TResult Function() init,
     required TResult Function(String input) usernameChanged,
     required TResult Function(String input) passwordChanged,
     required TResult Function() updateData,
@@ -448,7 +416,7 @@ class _$_PasswordChanged implements _PasswordChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String password)? init,
+    TResult? Function()? init,
     TResult? Function(String input)? usernameChanged,
     TResult? Function(String input)? passwordChanged,
     TResult? Function()? updateData,
@@ -459,7 +427,7 @@ class _$_PasswordChanged implements _PasswordChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String password)? init,
+    TResult Function()? init,
     TResult Function(String input)? usernameChanged,
     TResult Function(String input)? passwordChanged,
     TResult Function()? updateData,
@@ -510,8 +478,7 @@ class _$_PasswordChanged implements _PasswordChanged {
 }
 
 abstract class _PasswordChanged implements UserEvent {
-  const factory _PasswordChanged({required final String input}) =
-      _$_PasswordChanged;
+  factory _PasswordChanged({required final String input}) = _$_PasswordChanged;
 
   String get input;
   @JsonKey(ignore: true)
@@ -538,7 +505,7 @@ class __$$_UpdateDataCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_UpdateData implements _UpdateData {
-  const _$_UpdateData();
+  _$_UpdateData();
 
   @override
   String toString() {
@@ -557,7 +524,7 @@ class _$_UpdateData implements _UpdateData {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String password) init,
+    required TResult Function() init,
     required TResult Function(String input) usernameChanged,
     required TResult Function(String input) passwordChanged,
     required TResult Function() updateData,
@@ -568,7 +535,7 @@ class _$_UpdateData implements _UpdateData {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String password)? init,
+    TResult? Function()? init,
     TResult? Function(String input)? usernameChanged,
     TResult? Function(String input)? passwordChanged,
     TResult? Function()? updateData,
@@ -579,7 +546,7 @@ class _$_UpdateData implements _UpdateData {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String password)? init,
+    TResult Function()? init,
     TResult Function(String input)? usernameChanged,
     TResult Function(String input)? passwordChanged,
     TResult Function()? updateData,
@@ -630,12 +597,13 @@ class _$_UpdateData implements _UpdateData {
 }
 
 abstract class _UpdateData implements UserEvent {
-  const factory _UpdateData() = _$_UpdateData;
+  factory _UpdateData() = _$_UpdateData;
 }
 
 /// @nodoc
 mixin _$UserState {
-  bool get isSubmitting => throw _privateConstructorUsedError;
+  bool get isLoading => throw _privateConstructorUsedError;
+  bool get isUpdated => throw _privateConstructorUsedError;
   bool get isShowError => throw _privateConstructorUsedError;
   FieldUsername get username => throw _privateConstructorUsedError;
   FieldPassword get password => throw _privateConstructorUsedError;
@@ -653,7 +621,8 @@ abstract class $UserStateCopyWith<$Res> {
       _$UserStateCopyWithImpl<$Res, UserState>;
   @useResult
   $Res call(
-      {bool isSubmitting,
+      {bool isLoading,
+      bool isUpdated,
       bool isShowError,
       FieldUsername username,
       FieldPassword password,
@@ -673,16 +642,21 @@ class _$UserStateCopyWithImpl<$Res, $Val extends UserState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isSubmitting = null,
+    Object? isLoading = null,
+    Object? isUpdated = null,
     Object? isShowError = null,
     Object? username = null,
     Object? password = null,
     Object? options = null,
   }) {
     return _then(_value.copyWith(
-      isSubmitting: null == isSubmitting
-          ? _value.isSubmitting
-          : isSubmitting // ignore: cast_nullable_to_non_nullable
+      isLoading: null == isLoading
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isUpdated: null == isUpdated
+          ? _value.isUpdated
+          : isUpdated // ignore: cast_nullable_to_non_nullable
               as bool,
       isShowError: null == isShowError
           ? _value.isShowError
@@ -712,7 +686,8 @@ abstract class _$$_UserStateCopyWith<$Res> implements $UserStateCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {bool isSubmitting,
+      {bool isLoading,
+      bool isUpdated,
       bool isShowError,
       FieldUsername username,
       FieldPassword password,
@@ -730,16 +705,21 @@ class __$$_UserStateCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isSubmitting = null,
+    Object? isLoading = null,
+    Object? isUpdated = null,
     Object? isShowError = null,
     Object? username = null,
     Object? password = null,
     Object? options = null,
   }) {
     return _then(_$_UserState(
-      isSubmitting: null == isSubmitting
-          ? _value.isSubmitting
-          : isSubmitting // ignore: cast_nullable_to_non_nullable
+      isLoading: null == isLoading
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isUpdated: null == isUpdated
+          ? _value.isUpdated
+          : isUpdated // ignore: cast_nullable_to_non_nullable
               as bool,
       isShowError: null == isShowError
           ? _value.isShowError
@@ -765,14 +745,17 @@ class __$$_UserStateCopyWithImpl<$Res>
 
 class _$_UserState implements _UserState {
   const _$_UserState(
-      {required this.isSubmitting,
+      {required this.isLoading,
+      required this.isUpdated,
       required this.isShowError,
       required this.username,
       required this.password,
       required this.options});
 
   @override
-  final bool isSubmitting;
+  final bool isLoading;
+  @override
+  final bool isUpdated;
   @override
   final bool isShowError;
   @override
@@ -784,7 +767,7 @@ class _$_UserState implements _UserState {
 
   @override
   String toString() {
-    return 'UserState(isSubmitting: $isSubmitting, isShowError: $isShowError, username: $username, password: $password, options: $options)';
+    return 'UserState(isLoading: $isLoading, isUpdated: $isUpdated, isShowError: $isShowError, username: $username, password: $password, options: $options)';
   }
 
   @override
@@ -792,8 +775,10 @@ class _$_UserState implements _UserState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_UserState &&
-            (identical(other.isSubmitting, isSubmitting) ||
-                other.isSubmitting == isSubmitting) &&
+            (identical(other.isLoading, isLoading) ||
+                other.isLoading == isLoading) &&
+            (identical(other.isUpdated, isUpdated) ||
+                other.isUpdated == isUpdated) &&
             (identical(other.isShowError, isShowError) ||
                 other.isShowError == isShowError) &&
             (identical(other.username, username) ||
@@ -804,8 +789,8 @@ class _$_UserState implements _UserState {
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, isSubmitting, isShowError, username, password, options);
+  int get hashCode => Object.hash(runtimeType, isLoading, isUpdated,
+      isShowError, username, password, options);
 
   @JsonKey(ignore: true)
   @override
@@ -816,7 +801,8 @@ class _$_UserState implements _UserState {
 
 abstract class _UserState implements UserState {
   const factory _UserState(
-          {required final bool isSubmitting,
+          {required final bool isLoading,
+          required final bool isUpdated,
           required final bool isShowError,
           required final FieldUsername username,
           required final FieldPassword password,
@@ -824,7 +810,9 @@ abstract class _UserState implements UserState {
       _$_UserState;
 
   @override
-  bool get isSubmitting;
+  bool get isLoading;
+  @override
+  bool get isUpdated;
   @override
   bool get isShowError;
   @override

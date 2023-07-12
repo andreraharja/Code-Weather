@@ -4,7 +4,7 @@ import 'package:fpdart/fpdart.dart';
 import '../../infrastructure/core/models/user_model.dart';
 
 abstract class IUserRepo {
-  Future<Either<NetworkError, UserModel>> getDataUser(String password);
-  Future<Either<NetworkError, UserModel>> updateData(
+  Future<Either<NetworkError, UserModel>> getDataUser();
+  Future<Either<NetworkError, UserModel>> submitData(
       String username, String password);
 }

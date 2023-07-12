@@ -1,4 +1,3 @@
-import 'package:clone_weather/application/user/user_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -17,7 +16,7 @@ class UsernameField extends StatelessWidget {
       child: TextFormField(
         autovalidateMode: AutovalidateMode.onUserInteraction,
         onChanged: (value) {
-          context.read<UserBloc>().add(UserEvent.usernameChanged(input: value));
+          context.read<RegisterBloc>().add(RegisterEvent.usernameChanged(input: value));
         },
         validator: (value) => state.username.value.fold(
           (failure) {

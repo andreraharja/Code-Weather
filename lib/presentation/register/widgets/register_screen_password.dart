@@ -1,4 +1,3 @@
-import 'package:clone_weather/application/user/user_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -19,8 +18,8 @@ class PasswordField extends StatelessWidget {
         decoration: const InputDecoration(
             border: OutlineInputBorder(), labelText: 'Password'),
         onChanged: (value) => context
-            .read<UserBloc>()
-            .add(UserEvent.passwordChanged(input: value)),
+            .read<RegisterBloc>()
+            .add(RegisterEvent.passwordChanged(input: value)),
         validator: (value) => state.password.value.fold(
             (l) => l.maybeMap(
                 lengthToShort: (_) => 'Password must be 6+ characters',

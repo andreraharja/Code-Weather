@@ -18,47 +18,48 @@ class UserBloc extends Bloc<UserEvent, UserState> {
   IUserRepo repo;
   UserBloc(this.repo) : super(UserState.initial()) {
     on<UserEvent>((event, emit) async {
-      await event.when(
-          init: (password) async {
-            emit(state.copyWith(isSubmitting: true));
-            final failureOrSuccess = await repo.getDataUser(password);
-            emit(state.copyWith(
-                isSubmitting: false, options: optionOf(failureOrSuccess)));
-          },
-          usernameChanged: (input) async {
-            emit(state.copyWith(
-                username: FieldUsername(input), isSubmitting: false));
-            if (state.username.isValid() && state.password.isValid()) {
-              emit(state.copyWith(
-                isShowError: false,
-              ));
-            } else {
-              emit(state.copyWith(
-                isShowError: true,
-              ));
-            }
-          },
-          passwordChanged: (input) async {
-            emit(state.copyWith(
-                password: FieldPassword(input), isSubmitting: false));
+      await event.when(init: () async {
+        emit(state.copyWith(isLoading: true));
+        final failureOrSuccess = await repo.getDataUser();
+        emit(state.copyWith(
+            isLoading: false,
+            username: FieldUsername(
+                failureOrSuccess.fold((l) => "", (r) => r.username!)),
+            password: FieldPassword(
+                failureOrSuccess.fold((l) => "", (r) => r.password!)),
+            options: optionOf(failureOrSuccess)));
+      }, usernameChanged: (input) async {
+        emit(state.copyWith(username: FieldUsername(input)));
+        if (state.username.isValid() && state.password.isValid()) {
+          emit(state.copyWith(
+            isShowError: false,
+          ));
+        } else {
+          emit(state.copyWith(
+            isShowError: true,
+          ));
+        }
+      }, passwordChanged: (input) async {
+        emit(state.copyWith(password: FieldPassword(input)));
 
-            if (state.username.isValid() && state.password.isValid()) {
-              emit(state.copyWith(
-                isShowError: false,
-              ));
-            } else {
-              emit(state.copyWith(
-                isShowError: true,
-              ));
-            }
-          },
-          updateData: () async {
-            emit(state.copyWith(isSubmitting: true));
-            final failureOrSuccess = await repo.updateData(
-                state.username.username, state.password.password);
-            emit(state.copyWith(
-                isSubmitting: false, options: optionOf(failureOrSuccess)));
-          });
+        if (state.username.isValid() && state.password.isValid()) {
+          emit(state.copyWith(
+            isShowError: false,
+          ));
+        } else {
+          emit(state.copyWith(
+            isShowError: true,
+          ));
+        }
+      }, updateData: () async {
+        emit(state.copyWith(isLoading: true));
+        final failureOrSuccess = await repo.submitData(
+            state.username.username, state.password.password);
+        emit(state.copyWith(
+            isLoading: false,
+            isUpdated: true,
+            options: optionOf(failureOrSuccess)));
+      });
     });
   }
 }

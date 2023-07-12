@@ -29,8 +29,7 @@ class LoginScreen extends StatelessWidget {
                         .showSnackBar(
                             const SnackBar(content: Text("No Internet"))));
               },
-              (login) => context.router.replace(TabBarRoute(
-                  username: login.username!, password: login.password!)),
+              (login) => context.router.replace(const TabBarRoute()),
             );
           },
         );

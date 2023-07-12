@@ -5,7 +5,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../domain/core/user_objects.dart';
-import '../../domain/register/i_register_repo.dart';
+import '../../domain/user/i_user_repo.dart';
 import '../../infrastructure/core/models/user_model.dart';
 
 part 'register_bloc.freezed.dart';
@@ -14,7 +14,7 @@ part 'register_state.dart';
 
 @injectable
 class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
-  IRegisterRepo repo;
+  IUserRepo repo;
   RegisterBloc(this.repo) : super(RegisterState.initial()) {
     on<RegisterEvent>((event, emit) async {
       await event.when(
@@ -46,7 +46,13 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
               ));
             }
           },
-          registerData: () {});
+          registerData: () async {
+            emit(state.copyWith(isSubmitting: true));
+            final failureOrSuccess = await repo.submitData(
+                state.username.username, state.password.password);
+            emit(state.copyWith(
+                isSubmitting: false, options: optionOf(failureOrSuccess)));
+          });
     });
   }
 }

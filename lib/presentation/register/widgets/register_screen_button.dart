@@ -23,7 +23,7 @@ class RegisterButton extends StatelessWidget {
                     .add(const RegisterEvent.registerData());
               },
         child: const Text(
-          'Submit',
+          'Register',
           style: TextStyle(color: Colors.white),
         ),
       ),

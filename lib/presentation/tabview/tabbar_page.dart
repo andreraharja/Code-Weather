@@ -6,11 +6,7 @@ import 'package:flutter/material.dart';
 
 @RoutePage()
 class TabBarPage extends StatelessWidget {
-  const TabBarPage({Key? key, required this.username, required this.password})
-      : super(key: key);
-
-  final String username;
-  final String password;
+  const TabBarPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -50,13 +46,7 @@ class TabBarPage extends StatelessWidget {
               )
             ]),
           ),
-          body: TabBarView(children: [
-            const WeatherPage(),
-            ProfilePage(
-              username: username,
-              password: password,
-            )
-          ]),
+          body: const TabBarView(children: [WeatherPage(), ProfilePage()]),
         ),
       ),
     );

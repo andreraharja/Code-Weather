@@ -608,7 +608,7 @@ mixin _$LoginState {
   bool get isShowError => throw _privateConstructorUsedError;
   FieldUsername get username => throw _privateConstructorUsedError;
   FieldPassword get password => throw _privateConstructorUsedError;
-  Option<Either<NetworkError, LoginModel>> get options =>
+  Option<Either<NetworkError, UserModel>> get options =>
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -627,7 +627,7 @@ abstract class $LoginStateCopyWith<$Res> {
       bool isShowError,
       FieldUsername username,
       FieldPassword password,
-      Option<Either<NetworkError, LoginModel>> options});
+      Option<Either<NetworkError, UserModel>> options});
 }
 
 /// @nodoc
@@ -669,7 +669,7 @@ class _$LoginStateCopyWithImpl<$Res, $Val extends LoginState>
       options: null == options
           ? _value.options
           : options // ignore: cast_nullable_to_non_nullable
-              as Option<Either<NetworkError, LoginModel>>,
+              as Option<Either<NetworkError, UserModel>>,
     ) as $Val);
   }
 }
@@ -687,7 +687,7 @@ abstract class _$$_LoginStateCopyWith<$Res>
       bool isShowError,
       FieldUsername username,
       FieldPassword password,
-      Option<Either<NetworkError, LoginModel>> options});
+      Option<Either<NetworkError, UserModel>> options});
 }
 
 /// @nodoc
@@ -727,7 +727,7 @@ class __$$_LoginStateCopyWithImpl<$Res>
       options: null == options
           ? _value.options
           : options // ignore: cast_nullable_to_non_nullable
-              as Option<Either<NetworkError, LoginModel>>,
+              as Option<Either<NetworkError, UserModel>>,
     ));
   }
 }
@@ -751,7 +751,7 @@ class _$_LoginState implements _LoginState {
   @override
   final FieldPassword password;
   @override
-  final Option<Either<NetworkError, LoginModel>> options;
+  final Option<Either<NetworkError, UserModel>> options;
 
   @override
   String toString() {
@@ -791,7 +791,7 @@ abstract class _LoginState implements LoginState {
           required final bool isShowError,
           required final FieldUsername username,
           required final FieldPassword password,
-          required final Option<Either<NetworkError, LoginModel>> options}) =
+          required final Option<Either<NetworkError, UserModel>> options}) =
       _$_LoginState;
 
   @override
@@ -803,7 +803,7 @@ abstract class _LoginState implements LoginState {
   @override
   FieldPassword get password;
   @override
-  Option<Either<NetworkError, LoginModel>> get options;
+  Option<Either<NetworkError, UserModel>> get options;
   @override
   @JsonKey(ignore: true)
   _$$_LoginStateCopyWith<_$_LoginState> get copyWith =>

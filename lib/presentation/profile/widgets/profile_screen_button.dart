@@ -18,7 +18,7 @@ class UpdateButton extends StatelessWidget {
         onPressed: state.isShowError
             ? null
             : () {
-                context.read<UserBloc>().add(const UserEvent.updateData());
+                context.read<UserBloc>().add(UserEvent.updateData());
               },
         child: const Text(
           'Update',

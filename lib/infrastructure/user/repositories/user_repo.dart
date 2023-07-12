@@ -12,15 +12,16 @@ class UserRepo implements IUserRepo {
   UserRepo(this.network);
 
   @override
-  Future<Either<NetworkError, UserModel>> getDataUser(String password) async {
+  Future<Either<NetworkError, UserModel>> getDataUser() async {
     IStorage storage = Storage;
     String username = await storage.getData(key: 'username');
+    String password = await storage.getData(key: 'password');
     return right(
         UserModel.fromJson({"username": username, "password": password}));
   }
 
   @override
-  Future<Either<NetworkError, UserModel>> updateData(
+  Future<Either<NetworkError, UserModel>> submitData(
       String username, String password) async {
     IStorage storage = Storage;
     final json = {'username': username, 'password': password};
