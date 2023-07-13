@@ -60,8 +60,13 @@ mixin _$WeatherModel {
     required TResult Function(
             int? id, String? main, String? description, String? icon)
         weather,
-    required TResult Function(double? temp, double? feelsLike, double? tempMin,
-            double? tempMax, int? pressure, int? humidity)
+    required TResult Function(
+            double? temp,
+            @JsonKey(name: 'feels_like') double? feelsLike,
+            double? tempMin,
+            double? tempMax,
+            int? pressure,
+            int? humidity)
         main,
     required TResult Function(double? speed, int? deg) wind,
     required TResult Function(int? all) clouds,
@@ -90,8 +95,13 @@ mixin _$WeatherModel {
     TResult? Function(double? lon, double? lat)? coord,
     TResult? Function(int? id, String? main, String? description, String? icon)?
         weather,
-    TResult? Function(double? temp, double? feelsLike, double? tempMin,
-            double? tempMax, int? pressure, int? humidity)?
+    TResult? Function(
+            double? temp,
+            @JsonKey(name: 'feels_like') double? feelsLike,
+            double? tempMin,
+            double? tempMax,
+            int? pressure,
+            int? humidity)?
         main,
     TResult? Function(double? speed, int? deg)? wind,
     TResult? Function(int? all)? clouds,
@@ -120,8 +130,13 @@ mixin _$WeatherModel {
     TResult Function(double? lon, double? lat)? coord,
     TResult Function(int? id, String? main, String? description, String? icon)?
         weather,
-    TResult Function(double? temp, double? feelsLike, double? tempMin,
-            double? tempMax, int? pressure, int? humidity)?
+    TResult Function(
+            double? temp,
+            @JsonKey(name: 'feels_like') double? feelsLike,
+            double? tempMin,
+            double? tempMax,
+            int? pressure,
+            int? humidity)?
         main,
     TResult Function(double? speed, int? deg)? wind,
     TResult Function(int? all)? clouds,
@@ -424,8 +439,13 @@ class _$MWeather implements MWeather {
     required TResult Function(
             int? id, String? main, String? description, String? icon)
         weather,
-    required TResult Function(double? temp, double? feelsLike, double? tempMin,
-            double? tempMax, int? pressure, int? humidity)
+    required TResult Function(
+            double? temp,
+            @JsonKey(name: 'feels_like') double? feelsLike,
+            double? tempMin,
+            double? tempMax,
+            int? pressure,
+            int? humidity)
         main,
     required TResult Function(double? speed, int? deg) wind,
     required TResult Function(int? all) clouds,
@@ -458,8 +478,13 @@ class _$MWeather implements MWeather {
     TResult? Function(double? lon, double? lat)? coord,
     TResult? Function(int? id, String? main, String? description, String? icon)?
         weather,
-    TResult? Function(double? temp, double? feelsLike, double? tempMin,
-            double? tempMax, int? pressure, int? humidity)?
+    TResult? Function(
+            double? temp,
+            @JsonKey(name: 'feels_like') double? feelsLike,
+            double? tempMin,
+            double? tempMax,
+            int? pressure,
+            int? humidity)?
         main,
     TResult? Function(double? speed, int? deg)? wind,
     TResult? Function(int? all)? clouds,
@@ -492,8 +517,13 @@ class _$MWeather implements MWeather {
     TResult Function(double? lon, double? lat)? coord,
     TResult Function(int? id, String? main, String? description, String? icon)?
         weather,
-    TResult Function(double? temp, double? feelsLike, double? tempMin,
-            double? tempMax, int? pressure, int? humidity)?
+    TResult Function(
+            double? temp,
+            @JsonKey(name: 'feels_like') double? feelsLike,
+            double? tempMin,
+            double? tempMax,
+            int? pressure,
+            int? humidity)?
         main,
     TResult Function(double? speed, int? deg)? wind,
     TResult Function(int? all)? clouds,
@@ -694,8 +724,13 @@ class _$Coord implements Coord {
     required TResult Function(
             int? id, String? main, String? description, String? icon)
         weather,
-    required TResult Function(double? temp, double? feelsLike, double? tempMin,
-            double? tempMax, int? pressure, int? humidity)
+    required TResult Function(
+            double? temp,
+            @JsonKey(name: 'feels_like') double? feelsLike,
+            double? tempMin,
+            double? tempMax,
+            int? pressure,
+            int? humidity)
         main,
     required TResult Function(double? speed, int? deg) wind,
     required TResult Function(int? all) clouds,
@@ -727,8 +762,13 @@ class _$Coord implements Coord {
     TResult? Function(double? lon, double? lat)? coord,
     TResult? Function(int? id, String? main, String? description, String? icon)?
         weather,
-    TResult? Function(double? temp, double? feelsLike, double? tempMin,
-            double? tempMax, int? pressure, int? humidity)?
+    TResult? Function(
+            double? temp,
+            @JsonKey(name: 'feels_like') double? feelsLike,
+            double? tempMin,
+            double? tempMax,
+            int? pressure,
+            int? humidity)?
         main,
     TResult? Function(double? speed, int? deg)? wind,
     TResult? Function(int? all)? clouds,
@@ -760,8 +800,13 @@ class _$Coord implements Coord {
     TResult Function(double? lon, double? lat)? coord,
     TResult Function(int? id, String? main, String? description, String? icon)?
         weather,
-    TResult Function(double? temp, double? feelsLike, double? tempMin,
-            double? tempMax, int? pressure, int? humidity)?
+    TResult Function(
+            double? temp,
+            @JsonKey(name: 'feels_like') double? feelsLike,
+            double? tempMin,
+            double? tempMax,
+            int? pressure,
+            int? humidity)?
         main,
     TResult Function(double? speed, int? deg)? wind,
     TResult Function(int? all)? clouds,
@@ -956,8 +1001,13 @@ class _$Weather implements Weather {
     required TResult Function(
             int? id, String? main, String? description, String? icon)
         weather,
-    required TResult Function(double? temp, double? feelsLike, double? tempMin,
-            double? tempMax, int? pressure, int? humidity)
+    required TResult Function(
+            double? temp,
+            @JsonKey(name: 'feels_like') double? feelsLike,
+            double? tempMin,
+            double? tempMax,
+            int? pressure,
+            int? humidity)
         main,
     required TResult Function(double? speed, int? deg) wind,
     required TResult Function(int? all) clouds,
@@ -989,8 +1039,13 @@ class _$Weather implements Weather {
     TResult? Function(double? lon, double? lat)? coord,
     TResult? Function(int? id, String? main, String? description, String? icon)?
         weather,
-    TResult? Function(double? temp, double? feelsLike, double? tempMin,
-            double? tempMax, int? pressure, int? humidity)?
+    TResult? Function(
+            double? temp,
+            @JsonKey(name: 'feels_like') double? feelsLike,
+            double? tempMin,
+            double? tempMax,
+            int? pressure,
+            int? humidity)?
         main,
     TResult? Function(double? speed, int? deg)? wind,
     TResult? Function(int? all)? clouds,
@@ -1022,8 +1077,13 @@ class _$Weather implements Weather {
     TResult Function(double? lon, double? lat)? coord,
     TResult Function(int? id, String? main, String? description, String? icon)?
         weather,
-    TResult Function(double? temp, double? feelsLike, double? tempMin,
-            double? tempMax, int? pressure, int? humidity)?
+    TResult Function(
+            double? temp,
+            @JsonKey(name: 'feels_like') double? feelsLike,
+            double? tempMin,
+            double? tempMax,
+            int? pressure,
+            int? humidity)?
         main,
     TResult Function(double? speed, int? deg)? wind,
     TResult Function(int? all)? clouds,
@@ -1117,7 +1177,7 @@ abstract class _$$MainCopyWith<$Res> {
   @useResult
   $Res call(
       {double? temp,
-      double? feelsLike,
+      @JsonKey(name: 'feels_like') double? feelsLike,
       double? tempMin,
       double? tempMax,
       int? pressure,
@@ -1175,7 +1235,7 @@ class __$$MainCopyWithImpl<$Res>
 class _$Main implements Main {
   _$Main(
       {this.temp,
-      this.feelsLike,
+      @JsonKey(name: 'feels_like') this.feelsLike,
       this.tempMin,
       this.tempMax,
       this.pressure,
@@ -1188,6 +1248,7 @@ class _$Main implements Main {
   @override
   final double? temp;
   @override
+  @JsonKey(name: 'feels_like')
   final double? feelsLike;
   @override
   final double? tempMin;
@@ -1255,8 +1316,13 @@ class _$Main implements Main {
     required TResult Function(
             int? id, String? main, String? description, String? icon)
         weather,
-    required TResult Function(double? temp, double? feelsLike, double? tempMin,
-            double? tempMax, int? pressure, int? humidity)
+    required TResult Function(
+            double? temp,
+            @JsonKey(name: 'feels_like') double? feelsLike,
+            double? tempMin,
+            double? tempMax,
+            int? pressure,
+            int? humidity)
         main,
     required TResult Function(double? speed, int? deg) wind,
     required TResult Function(int? all) clouds,
@@ -1288,8 +1354,13 @@ class _$Main implements Main {
     TResult? Function(double? lon, double? lat)? coord,
     TResult? Function(int? id, String? main, String? description, String? icon)?
         weather,
-    TResult? Function(double? temp, double? feelsLike, double? tempMin,
-            double? tempMax, int? pressure, int? humidity)?
+    TResult? Function(
+            double? temp,
+            @JsonKey(name: 'feels_like') double? feelsLike,
+            double? tempMin,
+            double? tempMax,
+            int? pressure,
+            int? humidity)?
         main,
     TResult? Function(double? speed, int? deg)? wind,
     TResult? Function(int? all)? clouds,
@@ -1321,8 +1392,13 @@ class _$Main implements Main {
     TResult Function(double? lon, double? lat)? coord,
     TResult Function(int? id, String? main, String? description, String? icon)?
         weather,
-    TResult Function(double? temp, double? feelsLike, double? tempMin,
-            double? tempMax, int? pressure, int? humidity)?
+    TResult Function(
+            double? temp,
+            @JsonKey(name: 'feels_like') double? feelsLike,
+            double? tempMin,
+            double? tempMax,
+            int? pressure,
+            int? humidity)?
         main,
     TResult Function(double? speed, int? deg)? wind,
     TResult Function(int? all)? clouds,
@@ -1394,7 +1470,7 @@ class _$Main implements Main {
 abstract class Main implements WeatherModel {
   factory Main(
       {final double? temp,
-      final double? feelsLike,
+      @JsonKey(name: 'feels_like') final double? feelsLike,
       final double? tempMin,
       final double? tempMax,
       final int? pressure,
@@ -1403,6 +1479,7 @@ abstract class Main implements WeatherModel {
   factory Main.fromJson(Map<String, dynamic> json) = _$Main.fromJson;
 
   double? get temp;
+  @JsonKey(name: 'feels_like')
   double? get feelsLike;
   double? get tempMin;
   double? get tempMax;
@@ -1507,8 +1584,13 @@ class _$Wind implements Wind {
     required TResult Function(
             int? id, String? main, String? description, String? icon)
         weather,
-    required TResult Function(double? temp, double? feelsLike, double? tempMin,
-            double? tempMax, int? pressure, int? humidity)
+    required TResult Function(
+            double? temp,
+            @JsonKey(name: 'feels_like') double? feelsLike,
+            double? tempMin,
+            double? tempMax,
+            int? pressure,
+            int? humidity)
         main,
     required TResult Function(double? speed, int? deg) wind,
     required TResult Function(int? all) clouds,
@@ -1540,8 +1622,13 @@ class _$Wind implements Wind {
     TResult? Function(double? lon, double? lat)? coord,
     TResult? Function(int? id, String? main, String? description, String? icon)?
         weather,
-    TResult? Function(double? temp, double? feelsLike, double? tempMin,
-            double? tempMax, int? pressure, int? humidity)?
+    TResult? Function(
+            double? temp,
+            @JsonKey(name: 'feels_like') double? feelsLike,
+            double? tempMin,
+            double? tempMax,
+            int? pressure,
+            int? humidity)?
         main,
     TResult? Function(double? speed, int? deg)? wind,
     TResult? Function(int? all)? clouds,
@@ -1573,8 +1660,13 @@ class _$Wind implements Wind {
     TResult Function(double? lon, double? lat)? coord,
     TResult Function(int? id, String? main, String? description, String? icon)?
         weather,
-    TResult Function(double? temp, double? feelsLike, double? tempMin,
-            double? tempMax, int? pressure, int? humidity)?
+    TResult Function(
+            double? temp,
+            @JsonKey(name: 'feels_like') double? feelsLike,
+            double? tempMin,
+            double? tempMax,
+            int? pressure,
+            int? humidity)?
         main,
     TResult Function(double? speed, int? deg)? wind,
     TResult Function(int? all)? clouds,
@@ -1742,8 +1834,13 @@ class _$Clouds implements Clouds {
     required TResult Function(
             int? id, String? main, String? description, String? icon)
         weather,
-    required TResult Function(double? temp, double? feelsLike, double? tempMin,
-            double? tempMax, int? pressure, int? humidity)
+    required TResult Function(
+            double? temp,
+            @JsonKey(name: 'feels_like') double? feelsLike,
+            double? tempMin,
+            double? tempMax,
+            int? pressure,
+            int? humidity)
         main,
     required TResult Function(double? speed, int? deg) wind,
     required TResult Function(int? all) clouds,
@@ -1775,8 +1872,13 @@ class _$Clouds implements Clouds {
     TResult? Function(double? lon, double? lat)? coord,
     TResult? Function(int? id, String? main, String? description, String? icon)?
         weather,
-    TResult? Function(double? temp, double? feelsLike, double? tempMin,
-            double? tempMax, int? pressure, int? humidity)?
+    TResult? Function(
+            double? temp,
+            @JsonKey(name: 'feels_like') double? feelsLike,
+            double? tempMin,
+            double? tempMax,
+            int? pressure,
+            int? humidity)?
         main,
     TResult? Function(double? speed, int? deg)? wind,
     TResult? Function(int? all)? clouds,
@@ -1808,8 +1910,13 @@ class _$Clouds implements Clouds {
     TResult Function(double? lon, double? lat)? coord,
     TResult Function(int? id, String? main, String? description, String? icon)?
         weather,
-    TResult Function(double? temp, double? feelsLike, double? tempMin,
-            double? tempMax, int? pressure, int? humidity)?
+    TResult Function(
+            double? temp,
+            @JsonKey(name: 'feels_like') double? feelsLike,
+            double? tempMin,
+            double? tempMax,
+            int? pressure,
+            int? humidity)?
         main,
     TResult Function(double? speed, int? deg)? wind,
     TResult Function(int? all)? clouds,
@@ -2015,8 +2122,13 @@ class _$Sys implements Sys {
     required TResult Function(
             int? id, String? main, String? description, String? icon)
         weather,
-    required TResult Function(double? temp, double? feelsLike, double? tempMin,
-            double? tempMax, int? pressure, int? humidity)
+    required TResult Function(
+            double? temp,
+            @JsonKey(name: 'feels_like') double? feelsLike,
+            double? tempMin,
+            double? tempMax,
+            int? pressure,
+            int? humidity)
         main,
     required TResult Function(double? speed, int? deg) wind,
     required TResult Function(int? all) clouds,
@@ -2048,8 +2160,13 @@ class _$Sys implements Sys {
     TResult? Function(double? lon, double? lat)? coord,
     TResult? Function(int? id, String? main, String? description, String? icon)?
         weather,
-    TResult? Function(double? temp, double? feelsLike, double? tempMin,
-            double? tempMax, int? pressure, int? humidity)?
+    TResult? Function(
+            double? temp,
+            @JsonKey(name: 'feels_like') double? feelsLike,
+            double? tempMin,
+            double? tempMax,
+            int? pressure,
+            int? humidity)?
         main,
     TResult? Function(double? speed, int? deg)? wind,
     TResult? Function(int? all)? clouds,
@@ -2081,8 +2198,13 @@ class _$Sys implements Sys {
     TResult Function(double? lon, double? lat)? coord,
     TResult Function(int? id, String? main, String? description, String? icon)?
         weather,
-    TResult Function(double? temp, double? feelsLike, double? tempMin,
-            double? tempMax, int? pressure, int? humidity)?
+    TResult Function(
+            double? temp,
+            @JsonKey(name: 'feels_like') double? feelsLike,
+            double? tempMin,
+            double? tempMax,
+            int? pressure,
+            int? humidity)?
         main,
     TResult Function(double? speed, int? deg)? wind,
     TResult Function(int? all)? clouds,

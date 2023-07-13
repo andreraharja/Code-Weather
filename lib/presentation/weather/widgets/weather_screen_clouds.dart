@@ -1,10 +1,11 @@
-import 'package:clone_weather/infrastructure/weather/models/weather_model.dart';
 import 'package:flutter/material.dart';
 
 class WeatherClouds extends StatelessWidget {
-  const WeatherClouds({super.key, required this.r});
+  const WeatherClouds(
+      {super.key, required this.dataMain, required this.dataDesc});
 
-  final WeatherModel r;
+  final String dataMain;
+  final String dataDesc;
 
   @override
   Widget build(BuildContext context) {
@@ -23,16 +24,15 @@ class WeatherClouds extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              r.maybeMap(
-                  orElse: () => "",
-                  mWeather: (value) => value.weather![0].main!),
-              style: Theme.of(context).textTheme.titleMedium,
+              dataMain,
+              style: Theme.of(context).textTheme.titleLarge,
             ),
             Text(
-              r.maybeMap(
-                  orElse: () => "",
-                  mWeather: (value) => value.weather![0].description!),
-              style: Theme.of(context).textTheme.titleSmall,
+              dataDesc,
+              style: Theme.of(context)
+                  .textTheme
+                  .titleLarge!
+                  .apply(color: Colors.grey),
             ),
           ],
         ),

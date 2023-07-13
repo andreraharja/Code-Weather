@@ -48,6 +48,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         },
         login: () async {
           emit(state.copyWith(isSubmitting: true));
+          await Future.delayed(const Duration(seconds: 3));
           final failureOrSuccess = await repo.submitData(
               state.username.username, state.password.password);
           emit(state.copyWith(

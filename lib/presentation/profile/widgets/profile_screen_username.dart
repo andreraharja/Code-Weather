@@ -14,8 +14,7 @@ class UsernameField extends StatelessWidget {
       padding:
           const EdgeInsets.only(left: 15.0, right: 15.0, top: 15, bottom: 0),
       child: TextFormField(
-        initialValue: state.options
-            .fold(() => null, (t) => t.fold((l) => null, (r) => r.username)),
+        initialValue: state.username.username,
         autovalidateMode: AutovalidateMode.onUserInteraction,
         onChanged: (value) {
           context.read<UserBloc>().add(UserEvent.usernameChanged(input: value));

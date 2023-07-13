@@ -1,3 +1,5 @@
+// ignore_for_file: invalid_annotation_target
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'weather_model.freezed.dart';
@@ -27,7 +29,7 @@ class WeatherModel with _$WeatherModel {
 
   factory WeatherModel.main(
       {double? temp,
-      double? feelsLike,
+      @JsonKey(name: 'feels_like') double? feelsLike,
       double? tempMin,
       double? tempMax,
       int? pressure,

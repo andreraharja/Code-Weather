@@ -1,25 +1,18 @@
 import 'package:flutter/material.dart';
 
-import '../../../infrastructure/weather/models/weather_model.dart';
-
 class WeatherTemp extends StatelessWidget {
-  const WeatherTemp({super.key, required this.r});
+  const WeatherTemp({super.key, required this.dataTemp});
 
-  final WeatherModel r;
+  final String dataTemp;
 
   @override
   Widget build(BuildContext context) {
     return Align(
       alignment: Alignment.center,
       child: Text(
-        r.maybeMap(
-            orElse: () => "",
-            mWeather: (value) =>
-                value.main!.temp!.toStringAsFixed(0) + "\u2103"),
-        style: Theme.of(context)
-            .textTheme
-            .headlineLarge!
-            .apply(fontSizeFactor: 1.5),
+        dataTemp + "\u2103",
+        style:
+            Theme.of(context).textTheme.headlineLarge!.apply(fontSizeFactor: 2),
       ),
     );
   }

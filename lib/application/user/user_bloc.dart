@@ -23,13 +23,15 @@ class UserBloc extends Bloc<UserEvent, UserState> {
         final failureOrSuccess = await repo.getDataUser();
         emit(state.copyWith(
             isLoading: false,
+            isUpdated: false,
             username: FieldUsername(
                 failureOrSuccess.fold((l) => "", (r) => r.username!)),
             password: FieldPassword(
                 failureOrSuccess.fold((l) => "", (r) => r.password!)),
             options: optionOf(failureOrSuccess)));
       }, usernameChanged: (input) async {
-        emit(state.copyWith(username: FieldUsername(input)));
+        emit(state.copyWith(isUpdated: false, username: FieldUsername(input)));
+
         if (state.username.isValid() && state.password.isValid()) {
           emit(state.copyWith(
             isShowError: false,
@@ -40,7 +42,7 @@ class UserBloc extends Bloc<UserEvent, UserState> {
           ));
         }
       }, passwordChanged: (input) async {
-        emit(state.copyWith(password: FieldPassword(input)));
+        emit(state.copyWith(isUpdated: false, password: FieldPassword(input)));
 
         if (state.username.isValid() && state.password.isValid()) {
           emit(state.copyWith(

@@ -1,5 +1,6 @@
 import 'package:clone_weather/presentation/profile/widgets/profile_screen_password.dart';
 import 'package:clone_weather/presentation/profile/widgets/profile_screen_username.dart';
+import 'package:code_id_flutter/code_id_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -16,10 +17,10 @@ class ProfileScreen extends StatelessWidget {
         state.isUpdated
             ? state.options.fold(
                 () => null,
-                (failureOrSuccess) {
-                  failureOrSuccess.fold(
-                    (error) {
-                      error.maybeWhen(
+                (t) {
+                  t.fold(
+                    (l) {
+                      l.maybeWhen(
                           orElse: () => ScaffoldMessenger.of(context)
                               .showSnackBar(const SnackBar(
                                   content: Text("Update Failed"))),
@@ -27,7 +28,7 @@ class ProfileScreen extends StatelessWidget {
                               .showSnackBar(const SnackBar(
                                   content: Text("No Internet"))));
                     },
-                    (login) => ScaffoldMessenger.of(context).showSnackBar(
+                    (r) => ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(content: Text("Profile Updated"))),
                   );
                 },
@@ -35,33 +36,31 @@ class ProfileScreen extends StatelessWidget {
             : Container();
       },
       builder: (context, state) {
-        return state.isLoading
-            ? const Center(
-                child: CircularProgressIndicator(),
-              )
-            : state.options.fold(
-                () => Container(),
-                (t) => t.fold(
-                    (l) => const Center(
-                          child: Text("Data Profile Not Found"),
-                        ),
-                    (r) => GestureDetector(
-                          onTap: () {
-                            FocusScope.of(context).requestFocus(FocusNode());
-                          },
-                          child: Scaffold(
-                            backgroundColor: Colors.white,
-                            body: SingleChildScrollView(
-                              child: Column(
-                                children: <Widget>[
-                                  UsernameField(state: state),
-                                  PasswordField(state: state),
-                                  UpdateButton(state: state),
-                                ],
-                              ),
+        return StackWithProgress(isLoading: state.isLoading, children: [
+          state.options.fold(
+              () => Container(),
+              (t) => t.fold(
+                  (l) => const Center(
+                        child: Text("Data Profile Not Found"),
+                      ),
+                  (r) => GestureDetector(
+                        onTap: () {
+                          FocusScope.of(context).requestFocus(FocusNode());
+                        },
+                        child: Scaffold(
+                          backgroundColor: Colors.white,
+                          body: SingleChildScrollView(
+                            child: Column(
+                              children: <Widget>[
+                                UsernameField(state: state),
+                                PasswordField(state: state),
+                                UpdateButton(state: state),
+                              ],
                             ),
                           ),
-                        )));
+                        ),
+                      )))
+        ]);
       },
     );
   }

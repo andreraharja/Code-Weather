@@ -23,28 +23,32 @@ class TabBarPage extends StatelessWidget {
             backgroundColor: Colors.deepOrange,
             centerTitle: true,
             title: const Text('Code Weather'),
-            bottom: const TabBar(tabs: [
-              Tab(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(Icons.cloud),
-                    SizedBox(width: 5),
-                    Text('Weather'),
-                  ],
-                ),
-              ),
-              Tab(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(Icons.person),
-                    SizedBox(width: 5),
-                    Text('Profile'),
-                  ],
-                ),
-              )
-            ]),
+            bottom: TabBar(
+                onTap: (_) {
+                  FocusScope.of(context).requestFocus(FocusNode());
+                },
+                tabs: const [
+                  Tab(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Icons.cloud),
+                        SizedBox(width: 5),
+                        Text('Weather'),
+                      ],
+                    ),
+                  ),
+                  Tab(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Icons.person),
+                        SizedBox(width: 5),
+                        Text('Profile'),
+                      ],
+                    ),
+                  )
+                ]),
           ),
           body: const TabBarView(children: [WeatherPage(), ProfilePage()]),
         ),
