@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../application/user/user_bloc.dart';
+import '../../core/base_widget.dart';
 
 class UsernameField extends StatelessWidget {
   const UsernameField({super.key, required this.state});
@@ -10,16 +11,12 @@ class UsernameField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding:
-          const EdgeInsets.only(left: 15.0, right: 15.0, top: 15, bottom: 0),
-      child: TextFormField(
+    return CustomizeFieldUsername(
         initialValue: state.username.username,
-        autovalidateMode: AutovalidateMode.onUserInteraction,
         onChanged: (value) {
           context.read<UserBloc>().add(UserEvent.usernameChanged(input: value));
         },
-        validator: (value) => state.username.value.fold(
+        validator: state.username.value.fold(
           (failure) {
             return failure.maybeMap(
                 lengthToShort: (_) {
@@ -28,10 +25,6 @@ class UsernameField extends StatelessWidget {
                 orElse: () => null);
           },
           (r) => null,
-        ),
-        decoration: const InputDecoration(
-            border: OutlineInputBorder(), labelText: 'Username'),
-      ),
-    );
+        ));
   }
 }

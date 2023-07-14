@@ -1,3 +1,4 @@
+import 'package:clone_weather/presentation/core/base_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -10,16 +11,13 @@ class UsernameField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 15),
-      child: TextFormField(
-        autovalidateMode: AutovalidateMode.onUserInteraction,
+    return CustomizeFieldUsername(
         onChanged: (value) {
           context
               .read<LoginBloc>()
               .add(LoginEvent.usernameChanged(input: value));
         },
-        validator: (value) => state.username.value.fold(
+        validator: state.username.value.fold(
           (failure) {
             return failure.maybeMap(
                 lengthToShort: (_) {
@@ -28,10 +26,6 @@ class UsernameField extends StatelessWidget {
                 orElse: () => null);
           },
           (r) => null,
-        ),
-        decoration: const InputDecoration(
-            border: OutlineInputBorder(), labelText: 'Username'),
-      ),
-    );
+        ));
   }
 }

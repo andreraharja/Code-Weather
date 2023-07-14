@@ -11,7 +11,7 @@ class LoginButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.all(15.0),
+      margin: const EdgeInsets.only(left: 8.0, right: 8.0, top: 15.0),
       height: 50,
       width: double.infinity,
       child: ElevatedButton(
@@ -19,8 +19,8 @@ class LoginButton extends StatelessWidget {
         onPressed: state.isShowError
             ? null
             : () {
-          context.read<LoginBloc>().add(const LoginEvent.login());
-        },
+                context.read<LoginBloc>().add(const LoginEvent.login());
+              },
         child: const Text(
           'Login',
           style: TextStyle(color: Colors.white),

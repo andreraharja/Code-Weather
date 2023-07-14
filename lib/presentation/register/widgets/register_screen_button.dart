@@ -10,7 +10,7 @@ class RegisterButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.all(15.0),
+      margin: const EdgeInsets.only(left: 8.0, right: 8.0, top: 15.0),
       height: 50,
       width: double.infinity,
       child: ElevatedButton(
