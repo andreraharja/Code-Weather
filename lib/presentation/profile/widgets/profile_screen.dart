@@ -52,6 +52,7 @@ class ProfileScreen extends StatelessWidget {
                           body: SingleChildScrollView(
                             child: Column(
                               children: <Widget>[
+                                const SizedBox(height: 10),
                                 UsernameField(state: state),
                                 PasswordField(state: state),
                                 UpdateButton(state: state),

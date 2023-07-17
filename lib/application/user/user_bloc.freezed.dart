@@ -645,8 +645,8 @@ class _$UserStateCopyWithImpl<$Res, $Val extends UserState>
     Object? isLoading = null,
     Object? isUpdated = null,
     Object? isShowError = null,
-    Object? username = null,
-    Object? password = null,
+    Object? username = freezed,
+    Object? password = freezed,
     Object? options = null,
   }) {
     return _then(_value.copyWith(
@@ -662,11 +662,11 @@ class _$UserStateCopyWithImpl<$Res, $Val extends UserState>
           ? _value.isShowError
           : isShowError // ignore: cast_nullable_to_non_nullable
               as bool,
-      username: null == username
+      username: freezed == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
               as FieldUsername,
-      password: null == password
+      password: freezed == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as FieldPassword,
@@ -708,8 +708,8 @@ class __$$_UserStateCopyWithImpl<$Res>
     Object? isLoading = null,
     Object? isUpdated = null,
     Object? isShowError = null,
-    Object? username = null,
-    Object? password = null,
+    Object? username = freezed,
+    Object? password = freezed,
     Object? options = null,
   }) {
     return _then(_$_UserState(
@@ -725,11 +725,11 @@ class __$$_UserStateCopyWithImpl<$Res>
           ? _value.isShowError
           : isShowError // ignore: cast_nullable_to_non_nullable
               as bool,
-      username: null == username
+      username: freezed == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
               as FieldUsername,
-      password: null == password
+      password: freezed == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as FieldPassword,
@@ -781,16 +781,20 @@ class _$_UserState implements _UserState {
                 other.isUpdated == isUpdated) &&
             (identical(other.isShowError, isShowError) ||
                 other.isShowError == isShowError) &&
-            (identical(other.username, username) ||
-                other.username == username) &&
-            (identical(other.password, password) ||
-                other.password == password) &&
+            const DeepCollectionEquality().equals(other.username, username) &&
+            const DeepCollectionEquality().equals(other.password, password) &&
             (identical(other.options, options) || other.options == options));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, isLoading, isUpdated,
-      isShowError, username, password, options);
+  int get hashCode => Object.hash(
+      runtimeType,
+      isLoading,
+      isUpdated,
+      isShowError,
+      const DeepCollectionEquality().hash(username),
+      const DeepCollectionEquality().hash(password),
+      options);
 
   @JsonKey(ignore: true)
   @override

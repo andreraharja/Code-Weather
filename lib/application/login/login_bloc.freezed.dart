@@ -645,8 +645,8 @@ class _$LoginStateCopyWithImpl<$Res, $Val extends LoginState>
   $Res call({
     Object? isSubmitting = null,
     Object? isShowError = null,
-    Object? username = null,
-    Object? password = null,
+    Object? username = freezed,
+    Object? password = freezed,
     Object? options = null,
   }) {
     return _then(_value.copyWith(
@@ -658,11 +658,11 @@ class _$LoginStateCopyWithImpl<$Res, $Val extends LoginState>
           ? _value.isShowError
           : isShowError // ignore: cast_nullable_to_non_nullable
               as bool,
-      username: null == username
+      username: freezed == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
               as FieldUsername,
-      password: null == password
+      password: freezed == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as FieldPassword,
@@ -703,8 +703,8 @@ class __$$_LoginStateCopyWithImpl<$Res>
   $Res call({
     Object? isSubmitting = null,
     Object? isShowError = null,
-    Object? username = null,
-    Object? password = null,
+    Object? username = freezed,
+    Object? password = freezed,
     Object? options = null,
   }) {
     return _then(_$_LoginState(
@@ -716,11 +716,11 @@ class __$$_LoginStateCopyWithImpl<$Res>
           ? _value.isShowError
           : isShowError // ignore: cast_nullable_to_non_nullable
               as bool,
-      username: null == username
+      username: freezed == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
               as FieldUsername,
-      password: null == password
+      password: freezed == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as FieldPassword,
@@ -767,16 +767,19 @@ class _$_LoginState implements _LoginState {
                 other.isSubmitting == isSubmitting) &&
             (identical(other.isShowError, isShowError) ||
                 other.isShowError == isShowError) &&
-            (identical(other.username, username) ||
-                other.username == username) &&
-            (identical(other.password, password) ||
-                other.password == password) &&
+            const DeepCollectionEquality().equals(other.username, username) &&
+            const DeepCollectionEquality().equals(other.password, password) &&
             (identical(other.options, options) || other.options == options));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, isSubmitting, isShowError, username, password, options);
+      runtimeType,
+      isSubmitting,
+      isShowError,
+      const DeepCollectionEquality().hash(username),
+      const DeepCollectionEquality().hash(password),
+      options);
 
   @JsonKey(ignore: true)
   @override
