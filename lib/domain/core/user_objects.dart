@@ -1,7 +1,7 @@
 import 'package:code_id_flutter/code_id_flutter.dart';
 import 'package:fpdart/fpdart.dart';
 
-import 'failures.dart';
+import '../core/failures.dart';
 
 class FieldUsername extends ValueObject<Failures<String>, String> {
   @override
