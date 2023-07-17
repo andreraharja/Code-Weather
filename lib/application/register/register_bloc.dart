@@ -4,7 +4,7 @@ import 'package:fpdart/fpdart.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
-import '../../domain/core/user_objects.dart';
+import '../../domain/user/user_objects.dart';
 import '../../domain/user/i_user_repo.dart';
 import '../../infrastructure/core/models/user_model.dart';
 

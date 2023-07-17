@@ -6,7 +6,7 @@ import 'package:bloc/bloc.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../domain/user/i_user_repo.dart';
-import '../../domain/core/user_objects.dart';
+import '../../domain/user/user_objects.dart';
 import '../../infrastructure/core/models/user_model.dart';
 
 part 'user_bloc.freezed.dart';

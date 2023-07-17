@@ -5,7 +5,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:fpdart/fpdart.dart';
 
-import '../../domain/core/user_objects.dart';
+import '../../domain/user/user_objects.dart';
 import '../../domain/user/i_user_repo.dart';
 
 part 'login_bloc.freezed.dart';
